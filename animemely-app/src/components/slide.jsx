@@ -14,16 +14,19 @@ const Slide = () => {
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3416.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
+                                <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
+                            </div>
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
                             </div>
                         </div>
@@ -31,16 +34,19 @@ const Slide = () => {
 
                     <div className="carousel-item">
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3471.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3474.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3346.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
+                                <img src="https://animehay.club//upload/poster/3470.jpg" alt="" />
+                            </div>
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3470.jpg" alt="" />
                             </div>
                         </div>
@@ -48,16 +54,19 @@ const Slide = () => {
 
                     <div className="carousel-item">
                         <div className="row">
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3476.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-md-2dot4">
+                                <img src="https://animehay.club//upload/poster/3476.jpg" alt="" />
+                            </div>
+                            <div className="col-md-2dot4">
                                 <img src="https://animehay.club//upload/poster/3476.jpg" alt="" />
                             </div>
                         </div>
