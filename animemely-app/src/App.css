@@ -1,8 +1,10 @@
 :root{
   --background-color : #2d2d2d ; 
   --text-color : #cac9c9 ; 
+  --text-movie-color: #cc8d4c ; 
   --border-color : #404040 ; 
   --background-gray : #242525 ; 
+  --background-red : #923a3a ;  
 }
 
 *{
@@ -16,7 +18,16 @@ html{
   outline: none ; 
 }
 
+body{
+  background: #000 ; 
+}
+
 .container{
   width: 105rem ; 
   margin: auto ; 
+}
+
+.home-section{
+  padding: 1rem ; 
+  background: var(--background-color)
 }

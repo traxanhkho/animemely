@@ -1,0 +1,14 @@
+.swiper {
+    padding-bottom: 2.4rem ; 
+}
+
+.swiper .swiper-pagination{
+    bottom: 0 ; 
+}
+
+.swiper .swiper-pagination .swiper-pagination-bullet{
+    height: 1.2rem ; 
+    width: 1.2rem ; 
+    margin: 0 1.2rem ; 
+    background: var(--text-color) ;
+}

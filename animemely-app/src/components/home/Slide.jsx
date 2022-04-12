@@ -2,9 +2,11 @@ import React from "react";
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Heading from "../common/Heading";
+import CardMovie from "../common/CardMovie";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
+import "../../style/slide.css"
 
 const Slide = () => {
   return (
@@ -12,19 +14,41 @@ const Slide = () => {
       <Heading name="anime noi bat :" />
       <Swiper
         modules={[Pagination, Autoplay]}
-        spaceBetween={50}
+        spaceBetween={8}
         slidesPerView={5}
-        autoplay={{ delay: 1500, disableOnInteraction: true }}
+        autoplay={{ delay: 1600, disableOnInteraction: true }}
         pagination={{ clickable: true }}
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3487.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3484.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3487.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3465.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3465.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3487.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3484.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3433.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3465.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CardMovie urlImg="https://animehay.club//upload/poster/3405.jpeg" />
+        </SwiperSlide>
       </Swiper>
     </React.Fragment>
   );
