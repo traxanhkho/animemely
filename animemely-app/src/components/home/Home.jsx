@@ -4,10 +4,10 @@ import Slide from './Slide';
 
 function Home(props) {
     return (
-        <React.Fragment>
+        <div className='home-section'>
             <Slide />
-            <MovieList />
-        </React.Fragment>
+            {/* <MovieList /> */}
+        </div>
     );
 }
 

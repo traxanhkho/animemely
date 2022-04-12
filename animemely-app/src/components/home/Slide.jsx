@@ -1,89 +1,33 @@
-import React from 'react';
-import Heading from '../common/Heading';
+import React from "react";
+import { Pagination, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Heading from "../common/Heading";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 const Slide = () => {
-    return (
-        <React.Fragment>
-            <Heading name="anime noi bat :"/>
-            <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                <ol className="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
-                <div className="carousel-inner">
-                    <div className="carousel-item active">
-                        <div className="row">
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3416.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="carousel-item">
-                        <div className="row">
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3471.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3474.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3346.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3470.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3470.jpg" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="carousel-item">
-                        <div className="row">
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3476.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3421.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3476.jpg" alt="" />
-                            </div>
-                            <div className="col-md-2dot4">
-                                <img src="https://animehay.club//upload/poster/3476.jpg" alt="" />
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Previous</span>
-                </a>
-                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span className="sr-only">Next</span>
-                </a>
-            </div>
-        </React.Fragment>
-    );
-}
+  return (
+    <React.Fragment>
+      <Heading name="anime noi bat :" />
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        spaceBetween={50}
+        slidesPerView={5}
+        autoplay={{ delay: 1500, disableOnInteraction: true }}
+        pagination={{ clickable: true }}
+      >
+        <SwiperSlide>Slide 1</SwiperSlide>
+        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+      </Swiper>
+    </React.Fragment>
+  );
+};
 
 export default Slide;
