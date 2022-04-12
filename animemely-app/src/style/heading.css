@@ -1,0 +1,19 @@
+.heading-section{
+    margin: 1rem 0 ; 
+    background: var(--background-gray) ; 
+    height : 4rem ; 
+    display: flex ; 
+    align-items: center;  
+}
+
+.heading-section h1{
+    padding: 0 1.2rem ;
+    font-size: 1.8rem ; 
+    background: #000 ; 
+    height: 100% ; 
+    line-height: 4rem ; 
+    border-right: .1rem solid var(--border-color) ; 
+    color: var(--text-color) ; 
+    text-transform : capitalize ; 
+}
+

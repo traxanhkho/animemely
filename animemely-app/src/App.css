@@ -1,5 +1,8 @@
 :root{
-  --primary-color : black ; 
+  --background-color : #2d2d2d ; 
+  --text-color : #cac9c9 ; 
+  --border-color : #404040 ; 
+  --background-gray : #242525 ; 
 }
 
 *{
