@@ -3,6 +3,7 @@
     grid-template-columns : auto auto auto auto auto ; 
     gap : .8rem ; 
     width: 100% ; 
+    padding: 0 ; 
 }
 
 

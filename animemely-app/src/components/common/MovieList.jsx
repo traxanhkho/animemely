@@ -1,13 +1,13 @@
 import React from "react";
-import Pagination from "../common/Pagination";
-import CardMovie from "../common/CardMovie" ; 
-import Heading from "../common/Heading" ; 
+import Pagination from "./Pagination";
+import CardMovie from "./CardMovie" ; 
+import Heading from "./Heading" ; 
 import "../../style/movieList.css" ; 
 
 function MovieList(props) {
   return (
     <div className="movie-list">
-      <Heading name="Mới cập nhật" />
+      <Heading name={props.heading} />
       <div className="container">
         <CardMovie />
         <CardMovie />

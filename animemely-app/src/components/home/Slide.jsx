@@ -11,7 +11,7 @@ import "../../style/slide.css"
 const Slide = () => {
   return (
     <React.Fragment>
-      <Heading name="anime noi bat :" />
+      <Heading name="phim đề cử" />
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={8}
