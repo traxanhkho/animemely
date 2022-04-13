@@ -3,6 +3,7 @@
   --text-color : #cac9c9 ; 
   --text-movie-color: #cc8d4c ; 
   --border-color : #404040 ; 
+  --border-image : #737373 ; 
   --background-button : #585858 ; 
   --background-gray : #242525 ;
   --background-red : #923a3a ;  
@@ -36,6 +37,7 @@ body::-webkit-scrollbar-thumb{
 .container{
   width: 105rem ; 
   margin: auto ; 
+  background: var(--background-color) ; 
 }
 
 .home-section{

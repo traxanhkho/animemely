@@ -1,0 +1,10 @@
+
+.history-section .history-list{
+    background: #000 ; 
+    border-radius : .4rem ; 
+    padding : .8rem ; 
+    display: grid ; 
+    grid-template-columns: auto auto auto ;
+    width: 100% ; 
+    gap : .8rem ; 
+}
