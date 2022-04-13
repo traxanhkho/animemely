@@ -1,31 +1,29 @@
 import React from "react";
 import Pagination from "../common/Pagination";
+import CardMovie from "../common/CardMovie" ; 
+import Heading from "../common/Heading" ; 
+import "../../style/movieList.css" ; 
 
 function MovieList(props) {
   return (
-    <React.Fragment>
-      <div className="movie-list">
-        <div className="movie-item">
-          <img src="..." alt="anime-image" />
-          <h2>movie name</h2>
-          <span className="episode-latest">8/10</span>
-          <span className="movie-rate">9.9</span>
-        </div>
-        <div className="movie-item">
-          <img src="..." alt="anime-image" />
-          <h2>movie name</h2>
-          <span className="episode-latest">8/10</span>
-          <span className="movie-rate">9.9</span>
-        </div>
-        <div className="movie-item">
-          <img src="..." alt="anime-image" />
-          <h2>movie name</h2>
-          <span className="episode-latest">8/10</span>
-          <span className="movie-rate">9.9</span>
-        </div>
+    <div className="movie-list">
+      <Heading name="Mới cập nhật" />
+      <div className="container">
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
+        <CardMovie />
       </div>
       <Pagination />
-    </React.Fragment>
+    </div>
   );
 }
 

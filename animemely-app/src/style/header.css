@@ -23,6 +23,7 @@
 }
 
 .header-section .header-form input{
+    font-size: 1.6rem ; 
     width: 100% ; 
     padding: 1rem ; 
     background: #000 ; 
@@ -50,6 +51,7 @@
 
 .header-section .header-list a{
     font-size: 2rem ; 
+    text-decoration: none ; 
     margin: .4rem ; 
     padding: .8rem 1rem ; 
     color: var(--text-color) ; 

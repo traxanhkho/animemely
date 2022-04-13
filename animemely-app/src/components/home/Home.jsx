@@ -6,7 +6,7 @@ function Home(props) {
     return (
         <div className='home-section'>
             <Slide />
-            {/* <MovieList /> */}
+            <MovieList />
         </div>
     );
 }
