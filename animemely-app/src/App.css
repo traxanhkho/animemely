@@ -3,7 +3,8 @@
   --text-color : #cac9c9 ; 
   --text-movie-color: #cc8d4c ; 
   --border-color : #404040 ; 
-  --background-gray : #242525 ; 
+  --background-button : #585858 ; 
+  --background-gray : #242525 ;
   --background-red : #923a3a ;  
 }
 
@@ -20,6 +21,16 @@ html{
 
 body{
   background: #000 ; 
+}
+
+body::-webkit-scrollbar{
+  width: 1rem ; 
+  height: 1rem ; 
+  background : var(--border-color) ; 
+}
+
+body::-webkit-scrollbar-thumb{
+  background: #55928c ; 
 }
 
 .container{

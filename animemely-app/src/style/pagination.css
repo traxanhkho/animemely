@@ -1,0 +1,22 @@
+.pagination{
+    margin: 1.2rem auto ; 
+    justify-content: center ;
+}
+
+.pagination .page-item .page-link{ 
+    background: var(--background-button) ; 
+    font-size: 1.4rem ; 
+    text-transform : capitalize ; 
+    padding: .8rem 1.6rem ; 
+    border: none ; 
+    color: var(--text-color)
+}
+
+.pagination .page-item.active .page-link{
+    background: #4caf50 ; 
+}
+
+.pagination .page-item .page-link:hover{
+    cursor: pointer ; 
+    background : #4caf50 ; 
+}
