@@ -1,0 +1,32 @@
+.footer{
+    border-top : .1rem solid var(--border-color) ; 
+    background: var(--background-color); 
+    padding: 2rem .8rem ; 
+    display: flex ;
+    justify-content: space-between ; 
+    align-items: center ; 
+}
+
+.footer a{
+    width: 20rem ; 
+    text-align: center ; 
+    font-size: 2.4rem ; 
+    text-decoration : none ; 
+    color: var(--text-movie-color)
+}
+
+.footer div{
+    display: flex ;
+}
+
+.footer div i{
+    font-size: 2.4rem ; 
+    padding: .8rem ; 
+    margin: 0 1.2rem ; 
+    color: var(--text-color) ; 
+    cursor: pointer ; 
+}
+
+.footer div i:hover{
+    opacity: .8 ; 
+}
