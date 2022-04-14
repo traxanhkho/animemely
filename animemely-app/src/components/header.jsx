@@ -1,5 +1,6 @@
 import React from "react";
 import "../style/header.css";
+import CategoryMenu from "./CategoryMenu";
 
 function Header(props) {
   return (
@@ -17,6 +18,7 @@ function Header(props) {
         <a className="fa fa-bookmark" aria-hidden="true"></a>
         <a className="fa fa-user" aria-hidden="true"></a>
       </div>
+      <CategoryMenu />
     </div>
   );
 }

@@ -5,6 +5,7 @@
     background: var(--background-color) ;
     padding: 1rem ;   
     border-bottom : .1rem solid var(--border-color) ; 
+    position : relative ; 
 }
 
 .header-section .header-logo{
