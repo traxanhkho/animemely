@@ -1,0 +1,130 @@
+.info-movie h1 {
+  font-size: 2.2rem;
+  color: var(--text-color);
+  text-align: center;
+  background: var(--background-gray);
+  padding: 1.2rem 0;
+  text-transform: capitalize;
+}
+
+.info-movie .info-container {
+  display: flex;
+  padding: 0.8rem;
+  gap: 1.2rem;
+}
+
+.info-movie .info-container .info-image {
+  padding: 0.4rem;
+  background: #000;
+  width: 19%;
+  overflow: hidden;
+}
+
+.info-movie .info-container .info-image img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.info-movie .info-container .info-list {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.info-movie .info-container .info-list .info-item {
+  display: flex;
+  color: var(--text-color);
+  font-size: 1.6rem;
+  align-items: center;
+  padding-bottom: 0.4rem;
+  border-bottom: 0.1rem solid var(--border-color);
+}
+
+.info-movie .info-container .info-list .info-item h4 {
+  margin: 0;
+}
+
+.info-movie .info-container .info-list .info-item p {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.info-movie .info-nav {
+  background: var(--background-gray);
+  border-radius: 0.4rem;
+  padding: 1.2rem;
+  display: flex;
+}
+
+.info-movie .info-nav button {
+  padding: 0.4rem 1.2rem;
+  font-size: 2.4rem;
+  border-radius: 0.4rem;
+  margin: 0 0.4rem;
+  color: var(--text-color);
+  border: none;
+}
+
+.info-movie .info-nav button:hover {
+  opacity: 0.8;
+}
+
+.info-movie .info-nav .i-play {
+  background: var(--background-red);
+}
+.info-movie .info-nav .i-bookmark {
+  background: var(--background-green);
+}
+
+.info-movie .info-nav .i-star {
+  margin-left: auto;
+  background: var(--text-movie-color);
+}
+.info-movie .info-content,
+.info-movie .list-episode {
+  background: var(--background-gray);
+  border-radius: 0.4rem;
+  margin: 0.8rem 0;
+}
+
+.info-movie .info-content h4,
+.info-movie .list-episode h4 {
+  font-size: 2rem;
+  color: var(--text-color);
+  text-transform: capitalize;
+  padding: 0.8rem;
+  text-align: center;
+}
+
+.info-movie .list-episode .container-box {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  padding: 1.2rem;
+}
+
+.info-movie .list-episode .container-box a {
+  width: 5rem;
+  padding: 0.2rem 0.6rem;
+  background: var(--background-green);
+  color: var(--text-color);
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 0.4rem;
+  text-decoration: none;
+}
+
+.info-movie .list-episode .container-box a:hover {
+  opacity: 0.8;
+}
+
+.info-movie .info-content p{
+    font-size: 1.6rem ;
+    color: var(--text-color)  ;
+    padding: 0 2rem 2rem ;
+    text-align: justify ; 
+}
