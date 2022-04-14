@@ -18,7 +18,7 @@ function Header(props) {
         <a className="fa fa-bookmark" aria-hidden="true"></a>
         <a className="fa fa-user" aria-hidden="true"></a>
       </div>
-      <CategoryMenu />
+      {/* <CategoryMenu /> */}
     </div>
   );
 }
