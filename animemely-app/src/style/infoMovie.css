@@ -83,43 +83,20 @@
   margin-left: auto;
   background: var(--text-movie-color);
 }
-.info-movie .info-content,
-.info-movie .list-episode {
+
+
+.info-movie .info-content {
   background: var(--background-gray);
   border-radius: 0.4rem;
   margin: 0.8rem 0;
 }
 
-.info-movie .info-content h4,
-.info-movie .list-episode h4 {
+.info-movie .info-content h4{
   font-size: 2rem;
   color: var(--text-color);
   text-transform: capitalize;
   padding: 0.8rem;
   text-align: center;
-}
-
-.info-movie .list-episode .container-box {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  padding: 1.2rem;
-}
-
-.info-movie .list-episode .container-box a {
-  width: 5rem;
-  padding: 0.2rem 0.6rem;
-  background: var(--background-green);
-  color: var(--text-color);
-  font-size: 2rem;
-  text-align: center;
-  font-weight: 500;
-  border-radius: 0.4rem;
-  text-decoration: none;
-}
-
-.info-movie .list-episode .container-box a:hover {
-  opacity: 0.8;
 }
 
 .info-movie .info-content p{

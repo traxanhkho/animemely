@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Login from './components/user/LoginForm';
 import RegisterForm from './components/user/RegisterForm';
 import InfoMovie from './components/info-movie/InfoMovie';
+import WatchingMovie from './components/watching-movie/WatchingMovie';
 import './App.css';
 
 class App extends Component {
@@ -14,7 +15,8 @@ class App extends Component {
     return (
       <div className='container'>
         <Header />
-        <InfoMovie />
+        {/* <InfoMovie /> */}
+        <WatchingMovie />
         {/* <RegisterForm /> */}
         {/* <Login /> */}
         {/* <Home /> */}

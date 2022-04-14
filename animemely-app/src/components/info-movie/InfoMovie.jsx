@@ -1,6 +1,7 @@
 import React from "react";
 import Comment from "../common/Comment";
 import Info from "../common/Info";
+import ListEpisode from "../common/ListEpisode";
 import "../../style/infoMovie.css";
 
 function InfoMovie(props) {
@@ -30,16 +31,7 @@ function InfoMovie(props) {
           <i class="fa fa-star" aria-hidden="true"></i>
         </button>
       </div>
-      <div className="list-episode">
-        <h4>Danh sách tập</h4>
-        <div className="container-box">
-          <a href="#">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">5</a>
-        </div>
-      </div>
+      <ListEpisode />
       <div className="info-content">
         <h4>Nội dung</h4>
         <p>
