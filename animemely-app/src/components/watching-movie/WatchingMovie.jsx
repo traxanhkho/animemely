@@ -1,6 +1,7 @@
 import React from "react";
 import ListEpisode from "../common/ListEpisode";
 import Comment from "../common/Comment";
+import "../../style/watchingMovie.css" ; 
 
 function WatchingMovie(props) {
   return (
