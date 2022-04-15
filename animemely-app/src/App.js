@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Route, Navigate , Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./components/home/Home";
 import History from "./components/history/History";
@@ -17,18 +17,18 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <Switch>
-          <Route path="/info-movie" component={InfoMovie} />
-          <Route path="/watching-movie" component={WatchingMovie} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={RegisterForm} />
-          <Route path="/home" component={Home}/>
-          <Route path="/follow" component={Follow} />
-          <Route path="/history" component={History} />
-          <Route path="/not-found" component={NotFound} />
-          <Redirect from="/" exact to="/home" />
-          <Redirect to="/not-found" />
-        </Switch>
+        <Routes>
+          <Route path="/info-movie" element={<InfoMovie />} />
+          <Route path="/watching-movie" element={<WatchingMovie />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/home" element={<Home />}/>
+          <Route path="/follow" element={<Follow />} />
+          <Route path="/history" element={<History />} />
+          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Navigate replace to="/home" />} />
+          {/* <Navigate replace to="/not-found" /> */}
+        </Routes>
         <Footer />
       </div>
     );
