@@ -1,16 +1,16 @@
 import React from "react";
-import "../../style/cardMovie.css"
+import "../../style/cardMovie.css";
 
-function CardMovie(props) {
+function CardMovie({ movie }) {
   return (
     <div className="card-movie">
-      <img src={props.urlImg} alt="" />
-      <h4>Monsters vs Demons</h4>
+      <img src={movie.posters} alt="" />
+      <h4>{movie.movie_name}</h4>
       <div className="episode-latest">
-        <span>9/10</span>
+        <span>{movie.list_episode.length} tap</span>
       </div>
       <div className="score">
-          <span>9.1</span>
+        <span>{movie.starRatingMovie}</span>
       </div>
     </div>
   );

@@ -9,6 +9,8 @@ import "swiper/css/autoplay";
 import "../../style/slide.css"
 
 const Slide = () => {
+  
+
   return (
     <React.Fragment>
       <Heading name="phim đề cử" />

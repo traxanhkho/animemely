@@ -1,26 +1,18 @@
 import React from "react";
 import Pagination from "./Pagination";
-import CardMovie from "./CardMovie" ; 
-import Heading from "./Heading" ; 
-import "../../style/movieList.css" ; 
+import CardMovie from "./CardMovie";
+import Heading from "./Heading";
+import "../../style/movieList.css";
 
-function MovieList(props) {
+function MovieList({ heading, movies }) {
+
   return (
     <div className="movie-list">
-      <Heading name={props.heading} />
+      <Heading name={heading} />
       <div className="container">
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
-        <CardMovie />
+        {movies.map(movie => (
+          <CardMovie movie={movie}/>
+        ))}
       </div>
       <Pagination />
     </div>
