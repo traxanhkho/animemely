@@ -44,7 +44,10 @@ form .form-submit button:hover{
     opacity: .8 ; 
 }
 
-form .form-submit .register-btn{
-    background: var(--background-green);
-    font-size: 1rem ; 
+form .form-submit .link{
+    font-size: 1.4rem ;
+    padding-top: 2rem ; 
+    margin-left: 1.2rem ;  
+    color: #fff ; 
+    text-decoration : underline ; 
 }

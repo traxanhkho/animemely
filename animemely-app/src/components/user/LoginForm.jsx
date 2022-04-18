@@ -11,7 +11,7 @@ function Login(props) {
             <form>
                 {form.renderInput("email" , "Email" , "Nhập email của bạn" , "email")}
                 {form.renderInput("password","Password" , "Nhập mật khẩu của bạn" , "password")}
-                {form.renderButton("Đăng nhập","Đăng ký")}
+                {form.renderButton("Đăng nhập","Đăng ký","/register")}
             </form>
         </div>
     );

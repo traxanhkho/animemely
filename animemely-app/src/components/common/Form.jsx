@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom" ; 
 
 function renderInput(name, label, placeholder, type = "text") {
   return (
@@ -16,15 +17,15 @@ function renderInput(name, label, placeholder, type = "text") {
   );
 }
 
-function renderButton(name, text) {
+function renderButton(name, link , path) {
   return (
     <div className="form-submit">
       <button type="submit" className="btn">
         {name}
       </button>
-      <button type="submit" className="btn register-btn">
-        {text}
-      </button>
+      <Link to={path} type="submit" className="btn link">
+        {link}
+      </Link>
     </div>
   );
 }

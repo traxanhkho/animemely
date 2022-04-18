@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Heading from "../common/Heading";
@@ -6,10 +6,11 @@ import CardMovie from "../common/CardMovie";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
-import "../../style/slide.css"
+import "../../style/slide.css";
+import MovieContext from "../../context/movieContext";
 
 const Slide = () => {
-  
+  const { slide } = useContext(MovieContext);
 
   return (
     <React.Fragment>
@@ -21,36 +22,11 @@ const Slide = () => {
         autoplay={{ delay: 1600, disableOnInteraction: true }}
         pagination={{ clickable: true }}
       >
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3487.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3484.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3487.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3465.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3465.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3487.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3484.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3433.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3465.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <CardMovie urlImg="https://animehay.club//upload/poster/3405.jpeg" />
-        </SwiperSlide>
+        {slide.map((item) => (
+          <SwiperSlide>
+            <CardMovie movie={item} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </React.Fragment>
   );

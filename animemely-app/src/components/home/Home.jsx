@@ -1,16 +1,16 @@
-import React,  { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import MovieList from '../common/MovieList';
+import MovieContext from "../../context/movieContext";
 import Slide from './Slide';
-import { getMovies } from "../../services/fakeMovieService";
 
 
-function Home(props) {
-    const [movies, setMovie] = useState(getMovies());
-    
+function Home() {
+
+  const { movies } = useContext(MovieContext) ; 
 
     return (
         <div className='home-section'>
-            {/* <Slide /> */}
+            <Slide />
             <MovieList heading="mới cập nhật" movies={movies} />
         </div>
     );

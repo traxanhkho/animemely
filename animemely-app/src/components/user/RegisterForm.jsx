@@ -13,7 +13,7 @@ function RegisterForm(props) {
                 {form.renderInput("email" , "Email" , "Nhập email của bạn" , "email")}
                 {form.renderInput("password","Mật khẩu" , "Nhập mật khẩu của bạn" , "password")}
                 {form.renderInput("password","Nhập lại mật khẩu" , "Nhập lại mật khẩu của bạn" , "password")}
-                {form.renderButton("Đăng ký","Đăng nhập")}
+                {form.renderButton("Đăng ký","Đăng nhập","/login")}
             </form>
         </div>
     );

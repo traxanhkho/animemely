@@ -4,7 +4,7 @@ import CardMovie from "./CardMovie";
 import Heading from "./Heading";
 import "../../style/movieList.css";
 
-function MovieList({ heading, movies }) {
+function MovieList({ heading , movies }) {
 
   return (
     <div className="movie-list">
