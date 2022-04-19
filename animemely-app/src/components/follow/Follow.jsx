@@ -1,12 +1,22 @@
-import React from 'react';
-import MovieList from '../common/MovieList';
+import React, { useContext, useEffect, useState } from "react";
+import MovieList from "../common/MovieList";
+import MovieContext from "../../context/movieContext";
+import { getFollowed } from "../../services/fakeUserService";
 
 function Follow() {
-    return (
-        <div className='follow-section'>
-            <MovieList heading="phim bạn theo dõi" /> 
-        </div>
-    );
+  const { currentUser } = useContext(MovieContext);
+  const [follow, setfollow] = useState([]);
+  
+  useEffect(() => {
+    const follow = getFollowed(currentUser);
+    setfollow(follow);
+  }, []);
+
+  return (
+    <div className="follow-section">
+      <MovieList heading="phim bạn theo dõi" movies={follow} />
+    </div>
+  );
 }
 
-export default Follow ;
+export default Follow;

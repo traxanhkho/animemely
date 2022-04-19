@@ -11,7 +11,7 @@ function MovieList({ heading , movies }) {
       <Heading name={heading} />
       <div className="container">
         {movies.map(movie => (
-          <CardMovie movie={movie}/>
+          <CardMovie key={movie._id} movie={movie}/>
         ))}
       </div>
       <Pagination />

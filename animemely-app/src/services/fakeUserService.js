@@ -1,4 +1,4 @@
-import { getMovie } from "./fakeMovieService";
+import { getMovie, getMovies } from "./fakeMovieService";
 
 const movies = getMovies();
 const tokenKey = "token";
@@ -12,7 +12,12 @@ const users = [
       "5b21ca3eeb7f6fbccd471816",
       "5b21ca3eeb7f6fbccd471817",
     ],
-    history: ["5b21ca3eeb7f6fbccd47181a", "5b21ca3eeb7f6fbccd47181e"],
+    history: [
+      "5b21ca3eeb7f6fbccd47181a",
+      "5b21ca3eeb7f6fbccd47181e",
+      "5b21ca3eeb7f6fbccd471817",
+      "5b21ca3eeb7f6fbccd471816",
+    ],
     token: "datdeptraivaidai.okdatlanhathehe",
   },
   {
@@ -36,25 +41,33 @@ export function getCurrentUser() {
   return null;
 }
 
+function getUser(id) {
+  return users.find((u) => u._id === id);
+}
+
 export function getFollowed() {
-  const user = getCurrentUser();
+  // const user = getCurrentUser();
+  const user = "user1";
   const obj = [];
   if (user) {
-    for (key of user.followed) {
-      obj.push(getMovie(key));
+    const currentUser = getUser(user);
+    for (const value of currentUser.followed) {
+      obj.push(getMovie(value));
     }
     return obj;
   }
 
-  return null;
+  return [];
 }
 
 export function getHistory() {
-  const user = getCurrentUser();
+  // const user = getCurrentUser();
+  const user = "user1";
   const obj = [];
   if (user) {
-    for (key of user.history) {
-      obj.push(getMovie(key));
+    const currentUser = getUser(user);
+    for (const value of currentUser.history) {
+      obj.push(getMovie(value));
     }
     return obj;
   }

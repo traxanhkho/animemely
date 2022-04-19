@@ -16,9 +16,16 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    movies: getMovies(),
-    slide : getSlide() ,
+    movies: [],
+    slide : [] ,
+    currentUser : "" ,
   };
+
+  componentDidMount (){
+    this.setState({movies : getMovies()})
+    this.setState({slide : getSlide()})
+    this.setState({currentUser : "user1"})
+  }
 
   render() {
     return (
@@ -31,7 +38,7 @@ class App extends Component {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/home" element={<Home />} />
-            {/* <Route path="/follow" element={<Follow />} /> */}
+            <Route path="/follow" element={<Follow />} />
             <Route path="/history" element={<History />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Navigate replace to="/home" />} />
