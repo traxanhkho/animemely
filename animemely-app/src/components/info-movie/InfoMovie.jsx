@@ -1,23 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Comment from "../common/Comment";
 import Info from "../common/Info";
 import ListEpisode from "../common/ListEpisode";
+import { getMovie } from "../../services/fakeMovieService";
 import "../../style/infoMovie.css";
 
-function InfoMovie(props) {
+function InfoMovie() {
+  const [movie,setMovie] = useState({}) ;
+  const [list,setList] = useState([]) ;  
+  const params = useParams() ; 
+
+  useEffect(() => {
+    const movieId = params.id ; 
+    const movie = getMovie(movieId) ;
+    setMovie(movie) ; 
+    setList(movie.list_episode)   ;  
+  }, [])
+
   return (
     <div className="info-movie">
-      <h1>Monster and beautiful girl.</h1>
+      <h1>{movie.movie_name}</h1>
       <div className="info-container">
         <div className="info-image">
-          <img src="https://animehay.club/upload/poster/3078-1634943074.jpg" alt="" />
+          <img src={movie.posters} alt="" />
         </div>
         <ul className="info-list">
-          {Info.renderItem("Thể loại", "Anime , Psychological , Drama")}
-          {Info.renderItem("Trạng thái", "9/12")}
-          {Info.renderItem("Đánh giá", "8.9 || 19 đánh giá")}
-          {Info.renderItem("Phát hành", "2022")}
-          {Info.renderItem("Thời lượng", "12 tập")}
+          {Info.renderItem("Thể loại",movie.genre_name)}
+          {Info.renderItem("Trạng thái", movie.status)}
+          {Info.renderItem("Đánh giá", movie.starRatingMovie)}
+          {Info.renderItem("Phát hành", movie.release_year)}
         </ul>
       </div>
       <div className="info-nav">
@@ -31,17 +43,11 @@ function InfoMovie(props) {
           <i class="fa fa-star" aria-hidden="true"></i>
         </button>
       </div>
-      <ListEpisode />
+      <ListEpisode list={list} movie={movie}/>
       <div className="info-content">
         <h4>Nội dung</h4>
         <p>
-          Mùa cuối cùng của Series Magia Record: Mahou Shoujo Madoka☆Magica
-          Gaiden (TV). Mùa cuối cùng của Series Magia Record: Mahou Shoujo Madoka☆Magica
-          Gaiden (TV). Mùa cuối cùng của Series Magia Record: Mahou Shoujo Madoka☆Magica
-          Gaiden (TV). Mùa cuối cùng của Series Magia Record: Mahou Shoujo Madoka☆Magica
-          Gaiden (TV). Mùa cuối cùng của Series Magia Record: Mahou Shoujo Madoka☆Magica
-          Gaiden (TV). Mùa cuối cùng của Series Magia Record: Mahou Shoujo Madoka☆Magica
-          Gaiden (TV).
+         {movie.content}
         </p>
       </div>
       <Comment />

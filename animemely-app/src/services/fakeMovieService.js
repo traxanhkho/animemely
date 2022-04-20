@@ -4,10 +4,15 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471815",
     movie_name: "Shigatsu wa Kimi no Uso",
+    content:
+      "Câu chuyện kể về Arima Kousei, một thần đồng piano. Nhưng kể từ sau chấn động tâm lí do cái sự qua đời của mẹ cậu, Kosei đã không thể nghe thấy bất kì âm thanh nào. Cứ tưởng là cậu sẽ không bao giờ động vào những phím piano nữa nhưng đó là trước khi cậu đã gặp Miyazono Kaori",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Tình cảm" },
+    genre_name: "Tình cảm",
     starRatingMovie: 3,
     posters: "https://animehay.club/upload/poster/75.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2021",
     list_episode: [
       {
         _id: "1a1",
@@ -34,10 +39,15 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471816",
     movie_name: "Ganbare Douki-chan",
+    content:
+      "Ở chung phòng với cô bạn đồng nghiệp trong khách sạn ư?! Tuy cô ấy đã cảnh cáo mình không được làm điều gì ngu ngốc, nhưng đôi mắt mình vẫn bất giác hướng xuống chiếc quần tất đang bó sát lấy đôi chân ấy...” Dù rằng vẫn luôn cố gắng kiềm nén cảm xúc, chàng trai lại không hề hay biết Douki-chan đang thầm thích mình. Trong lúc Douki-chan đang vật lộn để thổ lộ tình cảm, các đối thủ của cô ấy, cả kouhai và senpai, cũng đang tìm mọi cách để giành lấy sự chú ý từ chàng trai. Douki-chan sẽ thành công không?",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Tình cảm" },
+    genre_name: "Tình cảm",
     starRatingMovie: 2.5,
     posters: "https://animehay.club//upload/poster/3323.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2018",
     list_episode: [
       {
         _id: "1b1",
@@ -52,10 +62,15 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471817",
     movie_name: "Get OutAharen-san wa Hakarenai",
+    content:
+      "Phim về hai nhân vật Raidou và Aharen-san. Aharen là người có vấn đề cảm xúc, không xác định được làm thế nào để kết thân với người khác.",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Hài hước" },
+    genre_name: "Hài hước",
     starRatingMovie: 3.5,
     posters: "https://animehay.club//upload/poster/3463.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2022",
     list_episode: [
       {
         _id: "1c1",
@@ -74,9 +89,14 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471819",
     movie_name: "One Piece",
+    content:
+      "Monkey D. Luffy, 1 cậu bé rất thích Đảo hải tặc có ước mơ tìm được kho báu One Piece và trở thành Vua hải tặc - Pirate King. Lúc nhỏ, Luffy tình cờ ăn phải trái quỉ (Devil Fruit) Gomu Gomu, nó cho cơ thể cậu khả năng co dãn đàn hồi như cao su nhưng đổi lại cậu sẽ không bao giờ biết bơi. Sau đó Luffy lại được Shank cứu thoát tuy nhiên ông ta bị mất 1 cánh tay. Sau đấy Shank chia tay Luffy và để lại cho cậu cái mũ rơm (Straw Hat) và nói rằng: Sau này bao giờ thành cướp biển hãy gặp ta và trả lại nó. Chính lời nói này đã thúc đầy Luffy trở thành 1 cướp biển thật sự.Hãy cùng theo dõi xem liệu Luffy có thể trở thành đạt được kho báu One Piece và trở thành Vua Hải Tặc không nhé.",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Hành động" },
+    genre_name: "Hành động",
     starRatingMovie: 3.5,
     posters: "https://animehay.club/upload/poster/34.jpg",
+    status: "Hoàn Thành",
+    release_year: "2017",
     list_episode: [
       {
         _id: "1d1",
@@ -107,10 +127,14 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd47181a",
     movie_name: "Shaman King (2021)",
+    content: "Shaman là những cá nhân kiệt xuất với năng lực giao tiếp cùng hồn ma, tinh linh và thần, vốn vô hình với con người. Shaman Fight—trận chiến giữa những Shaman trên khắp thế giới—được tổ chức mỗi 500 năm 1 lần, nơi người thăng sẽ trở thành Shaman King. Danh hiệu này cho phép người đó kêu gọi Đại Tinh Linh và biến thế giới thành nơi mình muốn.",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Hành động" },
+    genre_name: "Hành động",
     starRatingMovie: 3.5,
     posters: "https://animehay.club/upload/poster/3207.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2016",
     list_episode: [
       {
         _id: "2a31",
@@ -121,10 +145,14 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd47181b",
     movie_name: "Dragon Quest: Dai no Daibouken",
+    content: "Từ rất xa xưa, có một vị kiếm khách chính nghĩa được gọi là dũng sĩ đã trải qua bao cuộc chiến đấu với ma vương để giải thoát con người khỏi những đau khổ. Vị dũng sĩ và những người bạn sau khi cùng nhau liên kết sức mạnh, vượt qua rất nhiều trận đấu cam go. Cuối cùng ma vương cũng đã bị đánh bại.",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Hành động" },
+    genre_name: "Hành động",
     starRatingMovie: 3,
     posters: "https://animehay.club/upload/poster/3100.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2021",
     list_episode: [
       {
         _id: "31a1",
@@ -135,10 +163,14 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd47181e",
     movie_name: "Shachiku-san wa Youjo Yuurei ni Iyasaretai.",
+    content: "Khi nô lệ của công ty, cô Fushihara làm việc đến nửa đêm, một cô gái ma nhỏ trở nên quan tâm và cố gắng bắt cô về nhà. Trong khi nói “Hãy rời đi ngay bây giờ”, cô gái ma hỗ trợ và cung cấp đồ uống giải khát của cô, xoa dịu trái tim của cô Fushihara bằng sự quý giá của cô.",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Hài hước" },
+    genre_name: "Hài hước",
     starRatingMovie: 4.5,
     posters: "https://animehay.club//upload/poster/3483.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2021",
     list_episode: [
       {
         _id: "1b31",
@@ -153,10 +185,14 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd47181f",
     movie_name: "Machikado Mazoku 2nd Season",
+    content: "Mùa thứ 2 của anime Machikado Mazoku",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Hài hước" },
+    genre_name: "Hài hước",
     starRatingMovie: 3.5,
     posters: "https://animehay.club//upload/poster/3488.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2021",
     list_episode: [
       {
         _id: "7b1",
@@ -171,10 +207,14 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471821",
     movie_name: "Kawaii dake ja Nai Shikimori-san",
+    content: "Phim kể câu chuyện tình yêu siêu ngọt ngào của cậu trai nhẹ nhàng Izumi và cô bạn gái Shikimori \"siêu ngầu\".",
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Tình cảm" },
+    genre_name: "Tình cảm",
     starRatingMovie: 3.5,
     posters: "https://animehay.club//upload/poster/3491.jpg",
     slide: true,
+    status: "Hoàn Thành",
+    release_year: "2022",
     list_episode: [
       {
         _id: "5a1",
@@ -199,6 +239,11 @@ const movies = [
     ],
   },
 ];
+
+export function getEpisode(id){
+  const episode = movies.list_episode.find(e => e._id === id) ;
+  return episode ;  
+}
 
 export function getMovies() {
   return movies;

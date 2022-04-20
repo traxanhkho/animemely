@@ -1,9 +1,9 @@
 import React from 'react';
 import "../style/categoryMenu.css" ; 
 
-function CategoryMenu(props) {
+function CategoryMenu({active}) {
     return (
-        <div className='category-menu'>
+        <div className={active ? 'category-menu active' : "category-menu"}>
             <h2>Thể loại</h2>
             <div className="container-box">
                 <a href="#">dat dep trai vai dai ok babe</a>

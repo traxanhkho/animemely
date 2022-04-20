@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ListEpisode from "../common/ListEpisode";
 import Comment from "../common/Comment";
-import "../../style/watchingMovie.css" ; 
+import "../../style/watchingMovie.css";
+import { getMovie } from "../../services/fakeMovieService";
 
 function WatchingMovie(props) {
+  const {movieId , episodeId} = useParams() ;
+  const [movie,setMovie] = useState({}) ;  
+
+  useEffect(() => {
+    const movie = getMovie(movieId) ;
+    setMovie(movie) ;   
+  }, []);
+  
   return (
     <div className="watching-movie">
       <div className="watching-status">
@@ -16,7 +26,7 @@ function WatchingMovie(props) {
           controls
         />
       </div>
-      <ListEpisode />
+      {/* <ListEpisode /> */}
       <Comment />
     </div>
   );

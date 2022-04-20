@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../style/header.css";
 import CategoryMenu from "./CategoryMenu";
+import "../style/header.css";
 
-function Header(props) {
+function Header() {
+  const [active,setActive] = useState(false) ; 
+
   return (
     <div className="header-section">
       <Link to="/" className="header-logo">ANIME-logo</Link>
@@ -14,12 +16,12 @@ function Header(props) {
         </button>
       </form>
       <div className="header-list">
-        <a className="fa fa-bars" aria-hidden="true"></a>
+        <a className="fa fa-bars" onClick={() => setActive(!active)} aria-hidden="true"></a>
         <Link to="/history" className="fa fa-history" aria-hidden="true"></Link>
         <Link to="/follow" className="fa fa-bookmark" aria-hidden="true"></Link>
         <Link to="/login" className="fa fa-user" aria-hidden="true"></Link>
       </div>
-      {/* <CategoryMenu /> */}
+      <CategoryMenu active={active} />
     </div>
   );
 }

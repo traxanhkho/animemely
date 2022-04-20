@@ -23,7 +23,7 @@ const Slide = () => {
         pagination={{ clickable: true }}
       >
         {slide.map((item) => (
-          <SwiperSlide>
+          <SwiperSlide key={item._id}>
             <CardMovie movie={item} />
           </SwiperSlide>
         ))}

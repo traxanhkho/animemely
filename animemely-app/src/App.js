@@ -17,14 +17,14 @@ import "./App.css";
 class App extends Component {
   state = {
     movies: [],
-    slide : [] ,
-    currentUser : "" ,
+    slide: [],
+    currentUser: "",
   };
 
-  componentDidMount (){
-    this.setState({movies : getMovies()})
-    this.setState({slide : getSlide()})
-    this.setState({currentUser : "user1"})
+  componentDidMount() {
+    this.setState({ movies: getMovies() })
+    this.setState({ slide: getSlide() })
+    this.setState({ currentUser: "user1" })
   }
 
   render() {
@@ -33,8 +33,8 @@ class App extends Component {
         <div className="container">
           <Header />
           <Routes>
-            {/* <Route path="/info-movie" element={<InfoMovie />} />
-            <Route path="/watching-movie" element={<WatchingMovie />} /> */}
+            <Route path="/info-movie/:id" element={<InfoMovie />} />
+            <Route path="/watching-movie/:movieId/:episodeId" element={<WatchingMovie />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/home" element={<Home />} />
