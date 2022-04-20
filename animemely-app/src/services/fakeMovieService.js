@@ -240,9 +240,14 @@ const movies = [
   },
 ];
 
-export function getEpisode(id){
-  const episode = movies.list_episode.find(e => e._id === id) ;
-  return episode ;  
+export function getEpisode(movie,id){
+  const episode = movie.list_episode.find(e => e._id === id) ;
+  let currentIndex = movie.list_episode.indexOf(episode) ; 
+  ++currentIndex ;  
+  return {
+    path : episode.path , 
+    index : currentIndex 
+  } ;  
 }
 
 export function getMovies() {
