@@ -127,7 +127,8 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd47181a",
     movie_name: "Shaman King (2021)",
-    content: "Shaman là những cá nhân kiệt xuất với năng lực giao tiếp cùng hồn ma, tinh linh và thần, vốn vô hình với con người. Shaman Fight—trận chiến giữa những Shaman trên khắp thế giới—được tổ chức mỗi 500 năm 1 lần, nơi người thăng sẽ trở thành Shaman King. Danh hiệu này cho phép người đó kêu gọi Đại Tinh Linh và biến thế giới thành nơi mình muốn.",
+    content:
+      "Shaman là những cá nhân kiệt xuất với năng lực giao tiếp cùng hồn ma, tinh linh và thần, vốn vô hình với con người. Shaman Fight—trận chiến giữa những Shaman trên khắp thế giới—được tổ chức mỗi 500 năm 1 lần, nơi người thăng sẽ trở thành Shaman King. Danh hiệu này cho phép người đó kêu gọi Đại Tinh Linh và biến thế giới thành nơi mình muốn.",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Hành động" },
     genre_name: "Hành động",
     starRatingMovie: 3.5,
@@ -145,7 +146,8 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd47181b",
     movie_name: "Dragon Quest: Dai no Daibouken",
-    content: "Từ rất xa xưa, có một vị kiếm khách chính nghĩa được gọi là dũng sĩ đã trải qua bao cuộc chiến đấu với ma vương để giải thoát con người khỏi những đau khổ. Vị dũng sĩ và những người bạn sau khi cùng nhau liên kết sức mạnh, vượt qua rất nhiều trận đấu cam go. Cuối cùng ma vương cũng đã bị đánh bại.",
+    content:
+      "Từ rất xa xưa, có một vị kiếm khách chính nghĩa được gọi là dũng sĩ đã trải qua bao cuộc chiến đấu với ma vương để giải thoát con người khỏi những đau khổ. Vị dũng sĩ và những người bạn sau khi cùng nhau liên kết sức mạnh, vượt qua rất nhiều trận đấu cam go. Cuối cùng ma vương cũng đã bị đánh bại.",
     genre: { _id: "5b21ca3eeb7f6fbccd471814", name: "Hành động" },
     genre_name: "Hành động",
     starRatingMovie: 3,
@@ -163,7 +165,8 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd47181e",
     movie_name: "Shachiku-san wa Youjo Yuurei ni Iyasaretai.",
-    content: "Khi nô lệ của công ty, cô Fushihara làm việc đến nửa đêm, một cô gái ma nhỏ trở nên quan tâm và cố gắng bắt cô về nhà. Trong khi nói “Hãy rời đi ngay bây giờ”, cô gái ma hỗ trợ và cung cấp đồ uống giải khát của cô, xoa dịu trái tim của cô Fushihara bằng sự quý giá của cô.",
+    content:
+      "Khi nô lệ của công ty, cô Fushihara làm việc đến nửa đêm, một cô gái ma nhỏ trở nên quan tâm và cố gắng bắt cô về nhà. Trong khi nói “Hãy rời đi ngay bây giờ”, cô gái ma hỗ trợ và cung cấp đồ uống giải khát của cô, xoa dịu trái tim của cô Fushihara bằng sự quý giá của cô.",
     genre: { _id: "5b21ca3eeb7f6fbccd471820", name: "Hài hước" },
     genre_name: "Hài hước",
     starRatingMovie: 4.5,
@@ -207,7 +210,8 @@ const movies = [
   {
     _id: "5b21ca3eeb7f6fbccd471821",
     movie_name: "Kawaii dake ja Nai Shikimori-san",
-    content: "Phim kể câu chuyện tình yêu siêu ngọt ngào của cậu trai nhẹ nhàng Izumi và cô bạn gái Shikimori \"siêu ngầu\".",
+    content:
+      'Phim kể câu chuyện tình yêu siêu ngọt ngào của cậu trai nhẹ nhàng Izumi và cô bạn gái Shikimori "siêu ngầu".',
     genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Tình cảm" },
     genre_name: "Tình cảm",
     starRatingMovie: 3.5,
@@ -240,14 +244,14 @@ const movies = [
   },
 ];
 
-export function getEpisode(movie,id){
-  const episode = movie.list_episode.find(e => e._id === id) ;
-  let currentIndex = movie.list_episode.indexOf(episode) ; 
-  ++currentIndex ;  
+export function getEpisode(movie, id) {
+  const episode = movie.list_episode.find((e) => e._id === id);
+  let currentIndex = movie.list_episode.indexOf(episode);
+  ++currentIndex;
   return {
-    path : episode.path , 
-    index : currentIndex 
-  } ;  
+    path: episode.path,
+    index: currentIndex,
+  };
 }
 
 export function getMovies() {

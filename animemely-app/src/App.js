@@ -11,6 +11,7 @@ import InfoMovie from "./components/info-movie/InfoMovie";
 import WatchingMovie from "./components/watching-movie/WatchingMovie";
 import NotFound from "./components/NotFound";
 import { getMovies, getSlide } from "./services/fakeMovieService";
+import { getComments } from "./services/fakeCommentService";
 import MovieContext from "./context/movieContext";
 import "./App.css";
 
@@ -19,12 +20,15 @@ class App extends Component {
     movies: [],
     slide: [],
     currentUser: "",
+    comments : [] , 
   };
 
   componentDidMount() {
     this.setState({ movies: getMovies() })
     this.setState({ slide: getSlide() })
     this.setState({ currentUser: "user1" })
+    this.setState({ comments : getComments() })
+    window.scrollTo(0,0,"smooth")
   }
 
   render() {

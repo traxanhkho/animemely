@@ -29,7 +29,7 @@ function WatchingMovie() {
         <video src={episode.path} controls />
       </div>
       <ListEpisode list={list} movie={movie} />
-      <Comment />
+      <Comment id={movieId}/>
     </div>
   );
 }
