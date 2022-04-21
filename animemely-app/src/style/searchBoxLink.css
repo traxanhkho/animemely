@@ -1,3 +1,20 @@
-.box-search{
-    position : absolute ; 
+.box-search {
+  position: absolute;
+  top: 5rem;
+  background: #000;
+  width: 100%;
+  padding: 1.2rem;
+  z-index: 1000;
+}
+
+.box-search .search-link{
+    font-size: 1.6rem ; 
+    color: var(--text-color) ; 
+    text-decoration : none ; 
+    display: block ; 
+    margin: 1.2rem 0 ; 
+}
+
+.box-search .search-link:hover{
+    color: orange ; 
 }

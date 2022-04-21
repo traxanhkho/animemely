@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./common/SearchBox";
+import SearchBoxLink from "./common/SearchBoxLink";
 import CategoryMenu from "./CategoryMenu";
 import "../style/header.css";
 
@@ -12,14 +13,6 @@ function Header() {
     setSearchQuery(query);
   };
 
-  // const getPagedData = () => {
-  //   if (searchQuery) {
-  //     const filtered = allMovies.filter((m) =>
-  //       m.movie_name.toLowerCase().startsWith(searchQuery.toLowerCase())
-  //     );
-  //   }
-  // };
-
   return (
     <div className="header-section">
       <Link to="/" className="header-logo">
@@ -27,7 +20,7 @@ function Header() {
       </Link>
       <form className="header-form">
         <SearchBox value={searchQuery} onChange={handleSearch} />
-        <SearchBoxLink />
+        {searchQuery && <SearchBoxLink searchQuery={searchQuery} />}
       </form>
       <div className="header-list">
         <a
