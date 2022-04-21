@@ -1,11 +1,12 @@
 import { getMovie, getMovies } from "./fakeMovieService";
 
-const movies = getMovies();
 const tokenKey = "token";
 
 const users = [
   {
     _id: "user1",
+    email: "datdang@gmail.com",
+    password: "123123",
     name: "dat dang",
     followed: [
       "5b21ca3eeb7f6fbccd471815",
@@ -23,6 +24,8 @@ const users = [
   {
     _id: "user2",
     name: "tien dang",
+    email: "tiendang@gmail.com",
+    password: "123123",
     followed: ["5b21ca3eeb7f6fbccd47181a", "5b21ca3eeb7f6fbccd47181e"],
     history: [
       "5b21ca3eeb7f6fbccd471815",
@@ -32,6 +35,10 @@ const users = [
     token: "tiengamaivaidai.khongbietghicaigi",
   },
 ];
+
+export function getUsers() {
+  return users;
+}
 
 export function getCurrentUser() {
   const token = localStorage.getItem(tokenKey);

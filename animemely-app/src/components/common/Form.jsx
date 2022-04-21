@@ -1,36 +1,88 @@
-import React from "react";
-import { Link } from "react-router-dom" ; 
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Joi from "joi-browser";
 
-function renderInput(name, label, placeholder, type = "text") {
-  return (
-    <div className="mb-3">
-      <label htmlFor={name} className="form-label">
-        {label}
-      </label>
-      <input
-        type={type}
-        name={name}
-        className="form-control"
-        placeholder={placeholder}
-      />
-    </div>
-  );
+class Form extends Component {
+  state = {
+    data: {},
+    errors: {},
+  };
+
+  validate = () => {
+    const options = { abortEarly: false };
+    const { error } = Joi.validate(this.state.data, this.schema, options);
+    if (!error) return null;
+
+    const errors = {};
+    for (let item of error.details) errors[item.path[0]] = item.message;
+    return errors;
+  };
+
+  validateProperty = ({ name, value }) => {
+    const obj = { [name]: value };
+    const schema = { [name]: this.schema[name] };
+    const { error } = Joi.validate(obj, schema);
+    return error ? error.details[0].message : null;
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const errors = this.validate();
+    this.setState({ errors: errors || {} });
+    if (errors) return;
+
+    this.doSubmit();
+  };
+
+  handleChange = ({ currentTarget: input }) => {
+    const errors = { ...this.state.errors };
+    const errorMessage = this.validateProperty(input);
+    if (errorMessage) errors[input.name] = errorMessage;
+    else delete errors[input.name];
+
+    const data = { ...this.state.data };
+    data[input.name] = input.value;
+
+    this.setState({ data, errors });
+  };
+
+  renderInput(name, label, type = "text") {
+    const { data, errors } = this.state;
+
+    return (
+      <div className="mb-3">
+        <label htmlFor={name} className="form-label">
+          {label}
+        </label>
+        <input
+          id={name}
+          value={data[name]}
+          type={type}
+          name={name}
+          className="form-control"
+          onChange={this.handleChange}
+          placeholder={name}
+        />
+        {errors[name] && (
+          <div className="alert alert-danger">{errors[name]}</div>
+        )}
+      </div>
+    );
+  }
+
+  renderButton(name, link, path) {
+    return (
+      <div className="form-submit">
+        <button type="submit" className="btn">
+          {name}
+        </button>
+        <Link to={path} type="submit" className="btn link">
+          {link}
+        </Link>
+      </div>
+    );
+  }
 }
 
-function renderButton(name, link , path) {
-  return (
-    <div className="form-submit">
-      <button type="submit" className="btn">
-        {name}
-      </button>
-      <Link to={path} type="submit" className="btn link">
-        {link}
-      </Link>
-    </div>
-  );
-}
-
-export default {
-  renderInput,
-  renderButton,
-};
+export default Form;
