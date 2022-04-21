@@ -242,6 +242,76 @@ const movies = [
       },
     ],
   },
+  {
+    _id: "5b21cd6fbccd471821",
+    movie_name: "Kawaii dake ja Nai ",
+    content:
+      'Phim kể câu chuyện tình yêu siêu ngọt ngào của cậu trai nhẹ nhàng Izumi và cô bạn gái Shikimori "siêu ngầu".',
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Tình cảm" },
+    genre_name: "Tình cảm",
+    starRatingMovie: 3.5,
+    posters: "https://animehay.club//upload/poster/3491.jpg",
+    slide: true,
+    status: "Hoàn Thành",
+    release_year: "2022",
+    list_episode: [
+      {
+        _id: "4a4",
+        path: "https://scontent.fhan4-2.fna.fbcdn.net/v/t42.27313-2/10000000_1111080303025887_8951257575088292101_n.mp4?_nc_cat=100&vs=4977db2240c695ae&_nc_vs=HBksFQAYJEdJQ1dtQURmWHNlS2hmSURBQVdCS2JoV1FUbDhickZxQUFBRhUAAsgBABUAGCRHSUNXbUFEYTJGT0FkU3dCQUFJRnJtaVAxVlVIYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmzpGL4dvewwMVAigCQzMYC3Z0c19wcmV2aWV3HBdAlXz%2B%2Bdsi0Rg0ZGFzaF9pNGxpdGViYXNpY19wYXNzdGhyb3VnaGFsaWduZWRfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsJiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50ATARb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZBAxMzE2NzkxNTk4ODI1MTk5Em9lbV92aWRlb19hc3NldF9pZA82ODM2OTg3OTI5ODQwNDIVb2VtX3ZpZGVvX3Jlc291cmNlX2lkDzk5MzM4NjcxMTU3MzYwNxxvZW1fc291cmNlX3ZpZGVvX2VuY29kaW5nX2lkDzI3MDg5OTA0NTIyNTY3OSUCHAAlxAEbB4gBcwQyMTgxAmNkCjIwMjItMDMtMDgDcmNiATADYXBwEEJ1c2luZXNzIE1hbmFnZXICY3QZQ09OVEFJTkVEX1BPU1RfQVRUQUNITUVOVBNvcmlnaW5hbF9kdXJhdGlvbl9zCzEzNzUuMjQ4MzMzAnRzFXByb2dyZXNzaXZlX2VuY29kaW5ncwA%3D&ccb=1-5&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=6gsJGlK9wmEAX_sPAex&_nc_ht=video-lax3-2.xx&edm=APRAPSkEAAAA&oh=00_AT9mfKlNAcBFozqdVFxQk8zv-WMfRuqeTbO4RmGJouy5tg&oe=625E6D6E&_nc_rid=735945520436931",
+      },
+      {
+        _id: "7a5",
+        path: "https://scontent.fhan4-2.fna.fbcdn.net/v/t42.27313-2/10000000_103719962257875_1455091531145287347_n.mp4?_nc_cat=102&vs=9ab66b573e79313b&_nc_vs=HBksFQAYJEdJQ1dtQURUcVlFdlZWNEFBTE1XbU1VSmhqRVVickZxQUFBRhUAAsgBABUAGCRHSUNXbUFCdGM3N1hseThDQVA2bllYWWIwOUZvYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmupie0rKEuwIVAigCQzMYC3Z0c19wcmV2aWV3HBdAlXx%2B%2Bdsi0Rg0ZGFzaF9pNGxpdGViYXNpY19wYXNzdGhyb3VnaGFsaWduZWRfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsJiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50ATARb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZA8zMjQyMzQ1NTI4NDI4NDkSb2VtX3ZpZGVvX2Fzc2V0X2lkDzMzMDAyMjkxNTcyMjkyMhVvZW1fdmlkZW9fcmVzb3VyY2VfaWQPNjkyNzY3ODQyMDkyNTczHG9lbV9zb3VyY2VfdmlkZW9fZW5jb2RpbmdfaWQPNDcxNDI2MDgxMTIyNDk3JQIcACXEARsHiAFzBDM3MjMCY2QKMjAyMi0wMi0yNANyY2IBMANhcHAQQnVzaW5lc3MgTWFuYWdlcgJjdBlDT05UQUlORURfUE9TVF9BVFRBQ0hNRU5UE29yaWdpbmFsX2R1cmF0aW9uX3MLMTM3NS4xMzE2NjcCdHMVcHJvZ3Jlc3NpdmVfZW5jb2RpbmdzAA%3D%3D&ccb=1-5&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=S0D6zTg_700AX8YMw7F&_nc_ht=video-lax3-1.xx&edm=APRAPSkEAAAA&oh=00_AT_r56g_cQhRTQytqCaXCZ02HCajNniMmebLMo5BiuEkTw&oe=625EAC4D&_nc_rid=917161800361883",
+      },
+    ],
+  },
+  {
+    _id: "5b21cd6fbcdsfdffsdfcd471821",
+    movie_name: "Kawaii  ",
+    content:
+      'Phim kể câu chuyện tình yêu siêu ngọt ngào của cậu trai nhẹ nhàng Izumi và cô bạn gái Shikimori "siêu ngầu".',
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Tình cảm" },
+    genre_name: "Tình cảm",
+    starRatingMovie: 3.5,
+    posters: "https://animehay.club//upload/poster/3491.jpg",
+    slide: false,
+    status: "Hoàn Thành",
+    release_year: "2022",
+    list_episode: [
+      {
+        _id: "4asd4",
+        path: "https://scontent.fhan4-2.fna.fbcdn.net/v/t42.27313-2/10000000_1111080303025887_8951257575088292101_n.mp4?_nc_cat=100&vs=4977db2240c695ae&_nc_vs=HBksFQAYJEdJQ1dtQURmWHNlS2hmSURBQVdCS2JoV1FUbDhickZxQUFBRhUAAsgBABUAGCRHSUNXbUFEYTJGT0FkU3dCQUFJRnJtaVAxVlVIYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmzpGL4dvewwMVAigCQzMYC3Z0c19wcmV2aWV3HBdAlXz%2B%2Bdsi0Rg0ZGFzaF9pNGxpdGViYXNpY19wYXNzdGhyb3VnaGFsaWduZWRfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsJiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50ATARb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZBAxMzE2NzkxNTk4ODI1MTk5Em9lbV92aWRlb19hc3NldF9pZA82ODM2OTg3OTI5ODQwNDIVb2VtX3ZpZGVvX3Jlc291cmNlX2lkDzk5MzM4NjcxMTU3MzYwNxxvZW1fc291cmNlX3ZpZGVvX2VuY29kaW5nX2lkDzI3MDg5OTA0NTIyNTY3OSUCHAAlxAEbB4gBcwQyMTgxAmNkCjIwMjItMDMtMDgDcmNiATADYXBwEEJ1c2luZXNzIE1hbmFnZXICY3QZQ09OVEFJTkVEX1BPU1RfQVRUQUNITUVOVBNvcmlnaW5hbF9kdXJhdGlvbl9zCzEzNzUuMjQ4MzMzAnRzFXByb2dyZXNzaXZlX2VuY29kaW5ncwA%3D&ccb=1-5&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=6gsJGlK9wmEAX_sPAex&_nc_ht=video-lax3-2.xx&edm=APRAPSkEAAAA&oh=00_AT9mfKlNAcBFozqdVFxQk8zv-WMfRuqeTbO4RmGJouy5tg&oe=625E6D6E&_nc_rid=735945520436931",
+      },
+      {
+        _id: "7asd5",
+        path: "https://scontent.fhan4-2.fna.fbcdn.net/v/t42.27313-2/10000000_103719962257875_1455091531145287347_n.mp4?_nc_cat=102&vs=9ab66b573e79313b&_nc_vs=HBksFQAYJEdJQ1dtQURUcVlFdlZWNEFBTE1XbU1VSmhqRVVickZxQUFBRhUAAsgBABUAGCRHSUNXbUFCdGM3N1hseThDQVA2bllYWWIwOUZvYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmupie0rKEuwIVAigCQzMYC3Z0c19wcmV2aWV3HBdAlXx%2B%2Bdsi0Rg0ZGFzaF9pNGxpdGViYXNpY19wYXNzdGhyb3VnaGFsaWduZWRfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsJiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50ATARb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZA8zMjQyMzQ1NTI4NDI4NDkSb2VtX3ZpZGVvX2Fzc2V0X2lkDzMzMDAyMjkxNTcyMjkyMhVvZW1fdmlkZW9fcmVzb3VyY2VfaWQPNjkyNzY3ODQyMDkyNTczHG9lbV9zb3VyY2VfdmlkZW9fZW5jb2RpbmdfaWQPNDcxNDI2MDgxMTIyNDk3JQIcACXEARsHiAFzBDM3MjMCY2QKMjAyMi0wMi0yNANyY2IBMANhcHAQQnVzaW5lc3MgTWFuYWdlcgJjdBlDT05UQUlORURfUE9TVF9BVFRBQ0hNRU5UE29yaWdpbmFsX2R1cmF0aW9uX3MLMTM3NS4xMzE2NjcCdHMVcHJvZ3Jlc3NpdmVfZW5jb2RpbmdzAA%3D%3D&ccb=1-5&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=S0D6zTg_700AX8YMw7F&_nc_ht=video-lax3-1.xx&edm=APRAPSkEAAAA&oh=00_AT_r56g_cQhRTQytqCaXCZ02HCajNniMmebLMo5BiuEkTw&oe=625EAC4D&_nc_rid=917161800361883",
+      },
+    ],
+  },
+  {
+    _id: "5b21cddsssssdsdfcd471821",
+    movie_name: "Kawaii axinomoto ",
+    content:
+      'Phim kể câu chuyện tình yêu siêu ngọt ngào của cậu trai nhẹ nhàng Izumi và cô bạn gái Shikimori "siêu ngầu".',
+    genre: { _id: "5b21ca3eeb7f6fbccd471818", name: "Tình cảm" },
+    genre_name: "Tình cảm",
+    starRatingMovie: 3.5,
+    posters: "https://animehay.club//upload/poster/3491.jpg",
+    slide: false,
+    status: "Hoàn Thành",
+    release_year: "2022",
+    list_episode: [
+      {
+        _id: "4asdsadf4",
+        path: "https://scontent.fhan4-2.fna.fbcdn.net/v/t42.27313-2/10000000_1111080303025887_8951257575088292101_n.mp4?_nc_cat=100&vs=4977db2240c695ae&_nc_vs=HBksFQAYJEdJQ1dtQURmWHNlS2hmSURBQVdCS2JoV1FUbDhickZxQUFBRhUAAsgBABUAGCRHSUNXbUFEYTJGT0FkU3dCQUFJRnJtaVAxVlVIYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmzpGL4dvewwMVAigCQzMYC3Z0c19wcmV2aWV3HBdAlXz%2B%2Bdsi0Rg0ZGFzaF9pNGxpdGViYXNpY19wYXNzdGhyb3VnaGFsaWduZWRfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsJiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50ATARb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZBAxMzE2NzkxNTk4ODI1MTk5Em9lbV92aWRlb19hc3NldF9pZA82ODM2OTg3OTI5ODQwNDIVb2VtX3ZpZGVvX3Jlc291cmNlX2lkDzk5MzM4NjcxMTU3MzYwNxxvZW1fc291cmNlX3ZpZGVvX2VuY29kaW5nX2lkDzI3MDg5OTA0NTIyNTY3OSUCHAAlxAEbB4gBcwQyMTgxAmNkCjIwMjItMDMtMDgDcmNiATADYXBwEEJ1c2luZXNzIE1hbmFnZXICY3QZQ09OVEFJTkVEX1BPU1RfQVRUQUNITUVOVBNvcmlnaW5hbF9kdXJhdGlvbl9zCzEzNzUuMjQ4MzMzAnRzFXByb2dyZXNzaXZlX2VuY29kaW5ncwA%3D&ccb=1-5&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=6gsJGlK9wmEAX_sPAex&_nc_ht=video-lax3-2.xx&edm=APRAPSkEAAAA&oh=00_AT9mfKlNAcBFozqdVFxQk8zv-WMfRuqeTbO4RmGJouy5tg&oe=625E6D6E&_nc_rid=735945520436931",
+      },
+      {
+        _id: "7asd11115",
+        path: "https://scontent.fhan4-2.fna.fbcdn.net/v/t42.27313-2/10000000_103719962257875_1455091531145287347_n.mp4?_nc_cat=102&vs=9ab66b573e79313b&_nc_vs=HBksFQAYJEdJQ1dtQURUcVlFdlZWNEFBTE1XbU1VSmhqRVVickZxQUFBRhUAAsgBABUAGCRHSUNXbUFCdGM3N1hseThDQVA2bllYWWIwOUZvYnJGcUFBQUYVAgLIAQBLBogScHJvZ3Jlc3NpdmVfcmVjaXBlATENc3Vic2FtcGxlX2ZwcwAQdm1hZl9lbmFibGVfbnN1YgAgbWVhc3VyZV9vcmlnaW5hbF9yZXNvbHV0aW9uX3NzaW0AKGNvbXB1dGVfc3NpbV9vbmx5X2F0X29yaWdpbmFsX3Jlc29sdXRpb24AEWRpc2FibGVfcG9zdF9wdnFzABUAJQAcAAAmupie0rKEuwIVAigCQzMYC3Z0c19wcmV2aWV3HBdAlXx%2B%2Bdsi0Rg0ZGFzaF9pNGxpdGViYXNpY19wYXNzdGhyb3VnaGFsaWduZWRfaHEyX2ZyYWdfMl92aWRlbxIAGBh2aWRlb3MudnRzLmNhbGxiYWNrLnByb2Q4ElZJREVPX1ZJRVdfUkVRVUVTVBsJiBVvZW1fdGFyZ2V0X2VuY29kZV90YWcGb2VwX2hkE29lbV9yZXF1ZXN0X3RpbWVfbXMBMAxvZW1fY2ZnX3J1bGUHdW5tdXRlZBNvZW1fcm9pX3JlYWNoX2NvdW50ATARb2VtX2lzX2V4cGVyaW1lbnQADG9lbV92aWRlb19pZA8zMjQyMzQ1NTI4NDI4NDkSb2VtX3ZpZGVvX2Fzc2V0X2lkDzMzMDAyMjkxNTcyMjkyMhVvZW1fdmlkZW9fcmVzb3VyY2VfaWQPNjkyNzY3ODQyMDkyNTczHG9lbV9zb3VyY2VfdmlkZW9fZW5jb2RpbmdfaWQPNDcxNDI2MDgxMTIyNDk3JQIcACXEARsHiAFzBDM3MjMCY2QKMjAyMi0wMi0yNANyY2IBMANhcHAQQnVzaW5lc3MgTWFuYWdlcgJjdBlDT05UQUlORURfUE9TVF9BVFRBQ0hNRU5UE29yaWdpbmFsX2R1cmF0aW9uX3MLMTM3NS4xMzE2NjcCdHMVcHJvZ3Jlc3NpdmVfZW5jb2RpbmdzAA%3D%3D&ccb=1-5&_nc_sid=41a7d5&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=S0D6zTg_700AX8YMw7F&_nc_ht=video-lax3-1.xx&edm=APRAPSkEAAAA&oh=00_AT_r56g_cQhRTQytqCaXCZ02HCajNniMmebLMo5BiuEkTw&oe=625EAC4D&_nc_rid=917161800361883",
+      },
+    ],
+  },
+  
 ];
 
 export function getEpisode(movie, id) {
