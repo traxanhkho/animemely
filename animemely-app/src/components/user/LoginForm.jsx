@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import Joi  from "joi-browser";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Joi from "joi-browser";
 import Heading from "../common/Heading";
 import Form from "../common/Form";
 import { login } from "../../services/fakeAuthService";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../style/userForm.css";
+
 
 class LoginForm extends Form {
   state = {
@@ -13,13 +16,20 @@ class LoginForm extends Form {
   };
 
   schema = {
-    username: Joi.string().required().label("Username"),
+    username: Joi.string().required().email().label("Username"),
     password: Joi.string().required().label("Password"),
   };
 
   doSubmit = () => {
-      const { username , password } = this.state ; 
-      login(username,password) ; 
+    const { data } = this.state;
+    const success = login(data.username, data.password);
+    if (success) {
+      toast.success("Đăng nhập thành công.");
+      console.log(this.props.history("/"))
+
+    } else {
+      toast.error("Tài khoản hoặc mật khẩu đã sai.");
+    }
   };
 
   render() {
@@ -35,5 +45,7 @@ class LoginForm extends Form {
     );
   }
 }
+export default (props) => (
+  <LoginForm history={useNavigate()} />
+);
 
-export default LoginForm;

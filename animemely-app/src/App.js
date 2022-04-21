@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Route, Navigate, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 import Header from "./components/Header";
 import Home from "./components/home/Home";
 import History from "./components/history/History";
@@ -13,6 +14,7 @@ import NotFound from "./components/NotFound";
 import { getMovies, getSlide } from "./services/fakeMovieService";
 import { getComments } from "./services/fakeCommentService";
 import MovieContext from "./context/movieContext";
+import "react-toastify/dist/ReactToastify.css" ; 
 import "./App.css";
 
 class App extends Component {
@@ -28,13 +30,14 @@ class App extends Component {
     this.setState({ slide: getSlide() })
     this.setState({ currentUser: "user1" })
     this.setState({ comments : getComments() })
-    window.scrollTo(0,0,"smooth")
+    window.scrollTo(0,0,"smooth") ; 
   }
 
   render() {
     return (
       <MovieContext.Provider value={this.state}>
         <div className="container">
+          <ToastContainer />
           <Header />
           <Routes>
             <Route path="/info-movie/:id" element={<InfoMovie />} />
@@ -42,8 +45,8 @@ class App extends Component {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/follow" element={<Follow />} />
-            <Route path="/history" element={<History />} />
+            {/* <Route path="/follow" element={<Follow />} /> */}
+            {/* <Route path="/history" element={<History />} /> */}
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Navigate replace to="/home" />} />
           </Routes>

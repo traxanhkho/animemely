@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Joi from "joi-browser";
+import Input from "./Input";
 
 class Form extends Component {
   state = {
@@ -51,23 +52,14 @@ class Form extends Component {
     const { data, errors } = this.state;
 
     return (
-      <div className="mb-3">
-        <label htmlFor={name} className="form-label">
-          {label}
-        </label>
-        <input
-          id={name}
-          value={data[name]}
-          type={type}
-          name={name}
-          className="form-control"
-          onChange={this.handleChange}
-          placeholder={name}
-        />
-        {errors[name] && (
-          <div className="alert alert-danger">{errors[name]}</div>
-        )}
-      </div>
+      <Input
+        type={type}
+        name={name}
+        value={data[name]}
+        label={label}
+        onChange={this.handleChange}
+        error={errors[name]}
+      />
     );
   }
 
