@@ -21,6 +21,8 @@
     min-width: 25rem ; 
     flex: .9 ; 
     margin: 0 1rem ; 
+    align-items: center ; 
+    position: relative ; 
 }
 
 .header-section .header-form input{
@@ -33,18 +35,14 @@
     color: var(--text-color)
 }
 
-.header-section .header-form button{
+.header-section .header-form span{
     font-size: 2rem ; 
-    padding : 0 1.2rem ;
+    padding : .7rem ;
     color: var(--text-color) ; 
     background: #000 ; 
     border: none ; 
-    cursor: pointer ; 
 }
 
-.header-section .header-form button:hover{
-    opacity: .6 ; 
-}
 
 .header-section .header-list{
     display: flex ; 
