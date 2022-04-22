@@ -4,6 +4,7 @@
     background: var(--background-color) ; 
     padding: 1.2rem ;  
     cursor : pointer ; 
+    text-decoration: none ; 
 }
 
 .card-history:hover{

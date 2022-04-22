@@ -47,7 +47,7 @@ export function getComments(){
     return comments ; 
 }
 
-export function getCommnet(id){
+export function getComment(id){
     const list = comments.filter(c => c.movie_id === id) ; 
     return list ;  
 }

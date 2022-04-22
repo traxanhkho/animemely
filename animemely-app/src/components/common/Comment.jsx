@@ -1,17 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getCommnet } from "../../services/fakeCommentService";
+import { getComment } from "../../services/fakeCommentService";
 import "../../style/comment.css";
+import CommentBox from "./CommentBox";
 
 function Comment({ id }) {
-  const [comment, setComment] = useState(getCommnet(id));
+  const [comment, setComment] = useState(getComment(id));
 
   return (
     <div className="comment">
       <h2>Bình luận ({comment.length})</h2>
-      <Link to="/login" className="button-link">
+      {/* <Link to="/login" className="button-link">
         Đăng nhập để bình luận
-      </Link>
+      </Link> */}
+      <CommentBox />
       <div className="comment-container">
         {comment.map((item) => (
           <div key={item.id} className="comment-item">
@@ -28,7 +30,6 @@ function Comment({ id }) {
           </div>
         ))}
       </div>
-      <button className="more-comment button-link">Xem thêm bình luận</button>
     </div>
   );
 }

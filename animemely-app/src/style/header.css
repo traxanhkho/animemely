@@ -37,7 +37,7 @@
 
 .header-section .header-form span {
     font-size: 2rem;
-    padding: .7rem;
+    padding: .7rem 1.2rem ;
     color: var(--text-color);
     background: #000;
     border: none;

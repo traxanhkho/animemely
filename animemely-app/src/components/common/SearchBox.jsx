@@ -4,7 +4,7 @@ function SearchBox({ value, onChange }) {
   return (
     <React.Fragment>
       <input
-        type="text"
+        type="search"
         value={value}
         name="query"
         onChange={(e) => onChange(e.currentTarget.value)}
