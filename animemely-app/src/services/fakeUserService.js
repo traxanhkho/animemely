@@ -23,11 +23,7 @@ const users = [
     email: "tiendang@gmail.com",
     password: "123123",
     followed: ["5b21ca3eeb7f6fbccd47181a", "5b21ca3eeb7f6fbccd47181e"],
-    history: [
-      "5b21ca3eeb7f6fbccd471815",
-      "5b21ca3eeb7f6fbccd471816",
-      "5b21ca3eeb7f6fbccd471817",
-    ],
+    history: [],
     token: "tiengamaivaidai.khongbietghicaigi",
   },
 ];

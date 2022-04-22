@@ -18,7 +18,7 @@ function Follow() {
   if (!currentUser) {
     return (
       <div className="follow-section">
-        <h2>Vui lòng đăng nhập để xem phim đã theo dõi.</h2>
+        <h2>Vui lòng đăng nhập để xem danh sách phim đã theo dõi.</h2>
       </div>
     );
   }

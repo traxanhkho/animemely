@@ -8,3 +8,11 @@
     width: 100% ; 
     gap : .8rem ; 
 }
+
+.history-section h2{
+    color: burlywood ; 
+    font-size: 1.6rem ; 
+    text-align: center; 
+    padding: 1.2rem ; 
+    text-transform : capitalize ;
+}
