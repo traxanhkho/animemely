@@ -94,3 +94,20 @@
     border : .1rem solid var(--border-color) ;
     min-height: 8rem ; 
 }
+
+.comment-box button {
+    width: fit-content ;
+    margin-left: auto ; 
+    margin-right: .4rem ; 
+    font-size: 1.4rem ; 
+    font-weight : 500 ; 
+    color: #fff ; 
+    background: var(--background-red) ; 
+    border-radius: .4rem ; 
+    padding: .4rem ; 
+    border: none ; 
+}
+
+.comment-box button:hover{
+    opacity: .8 ; 
+}

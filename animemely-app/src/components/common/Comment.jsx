@@ -1,19 +1,23 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import MovieContext from "../../context/movieContext";
 import { getComment } from "../../services/fakeCommentService";
-import "../../style/comment.css";
 import CommentBox from "./CommentBox";
+import "../../style/comment.css";
 
 function Comment({ id }) {
+  const { currentUser } = useContext(MovieContext);
   const [comment, setComment] = useState(getComment(id));
 
   return (
     <div className="comment">
       <h2>Bình luận ({comment.length})</h2>
-      {/* <Link to="/login" className="button-link">
-        Đăng nhập để bình luận
-      </Link> */}
-      <CommentBox />
+      {!currentUser && (
+        <Link to="/login" className="button-link">
+          Đăng nhập để bình luận
+        </Link>
+      )}
+      {currentUser && <CommentBox />}
       <div className="comment-container">
         {comment.map((item) => (
           <div key={item.id} className="comment-item">
