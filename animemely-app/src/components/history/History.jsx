@@ -10,11 +10,29 @@ function History() {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    const history = getHistory(currentUser);
-    setHistory(history);
+    if (currentUser) {
+      const history = getHistory(currentUser);
+      setHistory(history);
+    }
   }, []);
 
-  
+  if (!currentUser) {
+    return (
+      <div className="follow-section">
+        <h2>Vui lòng đăng nhập để xem lịch sử phim đã xem.</h2>
+      </div>
+    );
+  }
+
+  if (history.length === 0) {
+    return (
+      <div className="history-section">
+        <Heading name="lịch sử đã xem" />
+        <h2>Cảm ơn bạn, Danh sách lịch sử đang trống.</h2>
+      </div>
+    );
+  }
+
   return (
     <div className="history-section">
       <Heading name="lịch sử đã xem" />

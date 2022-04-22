@@ -1,4 +1,4 @@
-import { getMovie, getMovies } from "./fakeMovieService";
+import { getMovie } from "./fakeMovieService";
 
 const tokenKey = "token";
 
@@ -8,11 +8,7 @@ const users = [
     email: "datdang@gmail.com",
     password: "123123",
     name: "dat dang",
-    followed: [
-      "5b21ca3eeb7f6fbccd471815",
-      "5b21ca3eeb7f6fbccd471816",
-      "5b21ca3eeb7f6fbccd471817",
-    ],
+    followed: [],
     history: [
       "5b21ca3eeb7f6fbccd47181a",
       "5b21ca3eeb7f6fbccd47181e",
@@ -54,10 +50,9 @@ export function getUser(email) {
 }
 
 export function getFollowed() {
-  const email = getCurrentUser();
+  const currentUser = getCurrentUser();
   const obj = [];
-  if (email) {
-    const currentUser = getUser(email);
+  if (currentUser) {
     for (const value of currentUser.followed) {
       obj.push(getMovie(value));
     }
@@ -68,16 +63,14 @@ export function getFollowed() {
 }
 
 export function getHistory() {
-  // const user = getCurrentUser();
-  const user = "user1";
+  const currentUser = getCurrentUser();
   const obj = [];
-  if (user) {
-    const currentUser = getUser(user);
+  if (currentUser) {
     for (const value of currentUser.history) {
       obj.push(getMovie(value));
     }
     return obj;
   }
 
-  return null;
+  return [];
 }

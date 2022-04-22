@@ -14,11 +14,21 @@ function MovieList({ heading, movies }) {
     return paginate(movies, currentPage, pageSize);
   };
 
-  const handlePageChange = page =>{
-    setCurrentPage(page) ; 
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const allMovies = getPagedData();
+
+  if (movies.length === 0) {
+    return (
+      <div className="movie-list">
+        <Heading name={heading} />
+        <h2>Cảm ơn bạn , chưa có bộ nào trong danh sách.</h2>
+      </div>
+    );
   }
 
-  const allMovies = getPagedData() ; 
   return (
     <div className="movie-list">
       <Heading name={heading} />
@@ -27,7 +37,7 @@ function MovieList({ heading, movies }) {
           <CardMovie key={movie._id} movie={movie} />
         ))}
       </div>
-      <Pagination 
+      <Pagination
         itemsCount={movies.length}
         pageSize={pageSize}
         currentPage={currentPage}

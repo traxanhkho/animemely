@@ -20,7 +20,11 @@ function SearchBoxLink({ searchQuery }) {
   return (
     <div className="box-search">
       {filter.map((item) => (
-        <Link key={item._id} to={`/info-movie/${item._id}`} className="search-link">
+        <Link
+          key={item._id}
+          to={`/info-movie/${item._id}`}
+          className="search-link"
+        >
           {item.movie_name}
         </Link>
       ))}

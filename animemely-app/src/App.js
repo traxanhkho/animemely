@@ -51,8 +51,8 @@ class App extends Component {
             <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/home" element={<Home />} />
-            {/* <Route path="/follow" element={<Follow />} /> */}
-            {/* <Route path="/history" element={<History />} /> */}
+            <Route path="/follow" element={<Follow />} />
+            <Route path="/history" element={<History />} />
             <Route path="*" element={<NotFound />} />
             <Route path="/" element={<Navigate replace to="/home" />} />
           </Routes>
