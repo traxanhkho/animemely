@@ -24,9 +24,8 @@ class LoginForm extends Form {
     const { data } = this.state;
     const success = login(data.username, data.password);
     if (success) {
-      toast.success("Đăng nhập thành công.");
-      console.log(this.props.history("/"))
-
+      this.props.history('/') ; 
+      window.location.reload() ; 
     } else {
       toast.error("Tài khoản hoặc mật khẩu đã sai.");
     }

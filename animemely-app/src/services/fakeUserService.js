@@ -43,8 +43,8 @@ export function getUsers() {
 export function getCurrentUser() {
   const token = localStorage.getItem(tokenKey);
   if (token) {
-    const { email } = users.find((u) => u.token === token);
-    return email;
+    const user = users.find((u) => u.token === token);
+    return user;
   }
   return null;
 }

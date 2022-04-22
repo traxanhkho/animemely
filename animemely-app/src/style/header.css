@@ -1,64 +1,73 @@
-.header-section{
-    display: flex ;
-    align-items: center ; 
+.header-section {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    background: var(--background-color) ;
-    padding: 1rem ;   
-    border-bottom : .1rem solid var(--border-color) ; 
-    position : relative ; 
+    background: var(--background-color);
+    padding: 1rem;
+    border-bottom: .1rem solid var(--border-color);
+    position: relative;
 }
 
-.header-section .header-logo{
-    width: 20rem ; 
-    font-size: 1.8rem ; 
-    text-align: center ; 
-    color: var(--text-color) ; 
+.header-section .header-logo {
+    width: 20rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: var(--text-color);
 }
 
-.header-section .header-form{
-    display: flex ; 
-    border : .1rem solid var(--border-color) ; 
-    min-width: 25rem ; 
-    flex: .9 ; 
-    margin: 0 1rem ; 
-    align-items: center ; 
-    position: relative ; 
+.header-section .header-form {
+    display: flex;
+    border: .1rem solid var(--border-color);
+    min-width: 25rem;
+    flex: .9;
+    margin: 0 1rem;
+    align-items: center;
+    position: relative;
 }
 
-.header-section .header-form input{
-    font-size: 1.6rem ; 
-    width: 100% ; 
-    padding: 1rem ; 
-    background: #000 ; 
-    border: none ; 
-    outline: none ; 
+.header-section .header-form input {
+    font-size: 1.6rem;
+    width: 100%;
+    padding: 1rem;
+    background: #000;
+    border: none;
+    outline: none;
     color: var(--text-color)
 }
 
-.header-section .header-form span{
-    font-size: 2rem ; 
-    padding : .7rem ;
-    color: var(--text-color) ; 
-    background: #000 ; 
-    border: none ; 
+.header-section .header-form span {
+    font-size: 2rem;
+    padding: .7rem;
+    color: var(--text-color);
+    background: #000;
+    border: none;
 }
 
 
-.header-section .header-list{
-    display: flex ; 
+.header-section .header-list {
+    display: flex;
 }
 
-.header-section .header-list a{
-    font-size: 2rem ; 
-    text-decoration: none ; 
-    margin: .4rem ; 
-    padding: .8rem 1rem ; 
-    color: var(--text-color) ; 
-    background : #000 ; 
-    border : .1rem solid var(--border-color) ; 
-    cursor: pointer ; 
+.header-section .header-list a {
+    font-size: 2rem;
+    text-decoration: none;
+    margin: .4rem;
+    padding: .8rem 1rem;
+    color: var(--text-color);
+    background: #000;
+    border: .1rem solid var(--border-color);
+    cursor: pointer;
 }
 
-.header-section .header-list a:hover{
-    opacity: .6 ; 
+.header-section .header-list span {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    line-height: 4.6rem;
+    margin: 0 0.4rem;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.header-section .header-list a:hover {
+    opacity: .6;
 }

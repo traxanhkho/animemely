@@ -1,20 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "./common/SearchBox";
 import SearchBoxLink from "./common/SearchBoxLink";
-import "../style/header.css";
 import MovieContext from "../context/movieContext";
-import { getUser } from "../services/fakeUserService";
+import "../style/header.css";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const { currentUser } = useContext(MovieContext);
-  const [username, setUsername] = useState("");
-
-  useEffect(() => {
-    const user = getUser(currentUser);
-    setUsername(user.name);
-  }, []);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -37,8 +30,8 @@ function Header() {
         )}
         {currentUser && (
           <React.Fragment>
-            <span>{username}</span>
-            <Link to="/logout">Logout</Link>
+            <span>{currentUser.name}</span>
+            <Link to="/logout"  class="fa fa-sign-out" aria-hidden="true"></Link>
           </React.Fragment>
         )}
       </div>

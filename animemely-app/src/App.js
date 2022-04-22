@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Navigate, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import MovieContext from "./context/movieContext";
 import Header from "./components/Header";
 import Home from "./components/home/Home";
 import History from "./components/history/History";
@@ -11,9 +12,9 @@ import RegisterForm from "./components/user/RegisterForm";
 import InfoMovie from "./components/info-movie/InfoMovie";
 import WatchingMovie from "./components/watching-movie/WatchingMovie";
 import NotFound from "./components/NotFound";
+import Logout from "./components/Logout";
 import { getMovies, getSlide } from "./services/fakeMovieService";
 import { getComments } from "./services/fakeCommentService";
-import MovieContext from "./context/movieContext";
 import { getCurrentUser } from "./services/fakeUserService";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -22,7 +23,7 @@ class App extends Component {
   state = {
     movies: [],
     slide: [],
-    currentUser: "",
+    currentUser: {},
     comments: [],
   };
 
@@ -47,6 +48,7 @@ class App extends Component {
               element={<WatchingMovie />}
             />
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/home" element={<Home />} />
             {/* <Route path="/follow" element={<Follow />} /> */}
