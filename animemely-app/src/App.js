@@ -14,7 +14,8 @@ import NotFound from "./components/NotFound";
 import { getMovies, getSlide } from "./services/fakeMovieService";
 import { getComments } from "./services/fakeCommentService";
 import MovieContext from "./context/movieContext";
-import "react-toastify/dist/ReactToastify.css" ; 
+import { getCurrentUser } from "./services/fakeUserService";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 class App extends Component {
@@ -22,15 +23,15 @@ class App extends Component {
     movies: [],
     slide: [],
     currentUser: "",
-    comments : [] , 
+    comments: [],
   };
 
   componentDidMount() {
-    this.setState({ movies: getMovies() })
-    this.setState({ slide: getSlide() })
-    this.setState({ currentUser: "user1" })
-    this.setState({ comments : getComments() })
-    window.scrollTo(0,0,"smooth") ; 
+    this.setState({ movies: getMovies() });
+    this.setState({ slide: getSlide() });
+    this.setState({ currentUser: getCurrentUser() });
+    this.setState({ comments: getComments() });
+    window.scrollTo(0, 0, "smooth");
   }
 
   render() {
@@ -41,7 +42,10 @@ class App extends Component {
           <Header />
           <Routes>
             <Route path="/info-movie/:id" element={<InfoMovie />} />
-            <Route path="/watching-movie/:movieId/:episodeId" element={<WatchingMovie />} />
+            <Route
+              path="/watching-movie/:movieId/:episodeId"
+              element={<WatchingMovie />}
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/home" element={<Home />} />

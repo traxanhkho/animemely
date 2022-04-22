@@ -43,21 +43,21 @@ export function getUsers() {
 export function getCurrentUser() {
   const token = localStorage.getItem(tokenKey);
   if (token) {
-    return users.find((u) => u.token === token);
+    const { email } = users.find((u) => u.token === token);
+    return email;
   }
   return null;
 }
 
-function getUser(id) {
-  return users.find((u) => u._id === id);
+export function getUser(email) {
+  return users.find((user) => user.email === email);
 }
 
 export function getFollowed() {
-  // const user = getCurrentUser();
-  const user = "user1";
+  const email = getCurrentUser();
   const obj = [];
-  if (user) {
-    const currentUser = getUser(user);
+  if (email) {
+    const currentUser = getUser(email);
     for (const value of currentUser.followed) {
       obj.push(getMovie(value));
     }
