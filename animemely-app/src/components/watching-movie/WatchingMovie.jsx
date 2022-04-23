@@ -17,7 +17,7 @@ function WatchingMovie() {
     setEpisode(episode);
     setMovie(movie);
     setList(movie.list_episode);
-  }, []);
+  }, [episodeId]);
 
   return (
     <div className="watching-movie">
