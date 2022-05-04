@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { useAuth } from "../../context/AuthContext";
 import Joi from "joi-browser";
 import Heading from "../common/Heading";
 import Form from "../common/Form";
-import { login } from "../../services/fakeAuthService";
+import { toast } from "react-toastify";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../style/userForm.css";
-
 
 class LoginForm extends Form {
   state = {
@@ -20,14 +19,19 @@ class LoginForm extends Form {
     password: Joi.string().required().label("Password"),
   };
 
-  doSubmit = () => {
-    const { data } = this.state;
-    const success = login(data.username, data.password);
-    if (success) {
-      this.props.history('/') ; 
-      window.location.reload() ; 
-    } else {
-      toast.error("Tài khoản hoặc mật khẩu đã sai.");
+  doSubmit = async () => {
+    const { username, password } = this.state.data;
+    console.log(username, password);
+    try {
+      const { login } = useAuth();
+      await login(username, password);
+      // this.props.history("/");
+      // window.location.reload();
+      toast.success("Bạn đã đăng nhập thành công.");
+    } catch (error) {
+      this.setState({
+        errors: { username: "Email hoặc Mật khẩu không hợp lệ." },
+      });
     }
   };
 
@@ -36,7 +40,7 @@ class LoginForm extends Form {
       <div className="login-section">
         <Heading name="đăng nhập thành viên" />
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("username", "Username")}
+          {this.renderInput("username", "Username", "Email của bạn")}
           {this.renderInput("password", "Password", "password")}
           {this.renderButton("Đăng nhập", "Đăng ký", "/register")}
         </form>
@@ -44,7 +48,4 @@ class LoginForm extends Form {
     );
   }
 }
-export default (props) => (
-  <LoginForm history={useNavigate()} />
-);
-
+export default (props) => <LoginForm history={useNavigate()} />;

@@ -30,6 +30,7 @@ class Form extends Component {
     e.preventDefault();
 
     const errors = this.validate();
+
     this.setState({ errors: errors || {} });
     if (errors) return;
 
@@ -48,7 +49,7 @@ class Form extends Component {
     this.setState({ data, errors });
   };
 
-  renderInput(name, label, type = "text") {
+  renderInput(name, label, placeholder, type = "text") {
     const { data, errors } = this.state;
 
     return (
@@ -57,6 +58,7 @@ class Form extends Component {
         name={name}
         value={data[name]}
         label={label}
+        placeholder={placeholder}
         onChange={this.handleChange}
         error={errors[name]}
       />
