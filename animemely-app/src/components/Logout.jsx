@@ -1,9 +1,15 @@
 import React, { useEffect } from "react";
+import { useAuth } from "../context/AuthContext";
 
 function Logout() {
+  const { logout } = useAuth();
   useEffect(() => {
-    localStorage.removeItem("token");
-    
+    const handleLogout = async () => {
+      await logout();
+    };
+
+    handleLogout();
+
     window.location = "/";
   }, []);
   return null;

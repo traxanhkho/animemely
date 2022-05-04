@@ -3,6 +3,7 @@ import { Route, Navigate, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import MovieContext from "./context/movieContext";
 import Header from "./components/Header";
+import { AuthProvider } from "./context/AuthContext";
 import Home from "./components/home/Home";
 import History from "./components/history/History";
 import Follow from "./components/follow/Follow";
@@ -37,28 +38,30 @@ class App extends Component {
 
   render() {
     return (
-      <MovieContext.Provider value={this.state}>
-        <div className="container">
-          <ToastContainer />
-          <Header />
-          <Routes>
-            <Route path="/info-movie/:id" element={<InfoMovie />} />
-            <Route
-              path="/watching-movie/:movieId/:episodeId"
-              element={<WatchingMovie />}
-            />
-            <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/register" element={<RegisterForm />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/follow" element={<Follow />} />
-            <Route path="/history" element={<History />} />
-            <Route path="*" element={<NotFound />} />
-            <Route path="/" element={<Navigate replace to="/home" />} />
-          </Routes>
-          <Footer />
-        </div>
-      </MovieContext.Provider>
+      <AuthProvider>
+        <MovieContext.Provider value={this.state}>
+          <div className="container">
+            <ToastContainer />
+            <Header />
+            <Routes>
+              <Route path="/info-movie/:id" element={<InfoMovie />} />
+              <Route
+                path="/watching-movie/:movieId/:episodeId"
+                element={<WatchingMovie />}
+              />
+              <Route path="/login" element={<Login />} />
+              <Route path="/logout" element={<Logout />} />
+              <Route path="/register" element={<RegisterForm />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/follow" element={<Follow />} />
+              <Route path="/history" element={<History />} />
+              <Route path="*" element={<NotFound />} />
+              <Route path="/" element={<Navigate replace to="/home" />} />
+            </Routes>
+            <Footer />
+          </div>
+        </MovieContext.Provider>
+      </AuthProvider>
     );
   }
 }

@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import SearchBox from "./common/SearchBox";
 import SearchBoxLink from "./common/SearchBoxLink";
 import MovieContext from "../context/movieContext";
+import { useAuth } from "../context/AuthContext";
 import "../style/header.css";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState("");
-  const { currentUser } = useContext(MovieContext);
+  const { currentUser } = useAuth ; 
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -30,7 +31,7 @@ function Header() {
         )}
         {currentUser && (
           <React.Fragment>
-            <span>{currentUser.name}</span>
+            <span>{currentUser.email}</span>
             <Link to="/logout"  class="fa fa-sign-out" aria-hidden="true"></Link>
           </React.Fragment>
         )}
