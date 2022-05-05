@@ -3,15 +3,26 @@ import { Link } from "react-router-dom";
 import SearchBox from "./common/SearchBox";
 import SearchBoxLink from "./common/SearchBoxLink";
 import MovieContext from "../context/movieContext";
-import { useAuth } from "../context/AuthContext";
+import AuthContext from "../context/AuthContext";
 import "../style/header.css";
+import { toast } from "react-toastify";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState("");
-  const { currentUser } = useAuth ; 
+  const { currentUser, logout } = useContext(AuthContext);
 
   const handleSearch = (query) => {
     setSearchQuery(query);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      window.location = "/";
+      window.location.reload();
+    } catch (error) {
+      toast.error("Đã xảy ra lỗi bên phía back-end");
+    }
   };
 
   return (
@@ -32,7 +43,11 @@ function Header() {
         {currentUser && (
           <React.Fragment>
             <span>{currentUser.email}</span>
-            <Link to="/logout"  class="fa fa-sign-out" aria-hidden="true"></Link>
+            <a
+              onClick={handleLogout}
+              class="fa fa-sign-out"
+              aria-hidden="true"
+            ></a>
           </React.Fragment>
         )}
       </div>

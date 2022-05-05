@@ -24,18 +24,15 @@ class RegisterForm extends form {
 
   doSubmit = async () => {
     const { username, password } = this.state.data;
-    const { signup, login } = this.context;
+    const { signup } = this.context;
     try {
       await signup(username, password);
-
       this.props.history("/");
       window.location.reload();
-      toast.success("Chúc mừng bạn đã đăng ký thành công.");
     } catch (error) {
-      //   this.setState({
-      //     errors: { nickname: "Lỗi tạo tài khoản vui lòng kiểm tra lại." },
-      //   });
-      console.log(error);
+        this.setState({
+          errors: { nickname: "Lỗi tạo tài khoản vui lòng kiểm tra lại." },
+        });
     }
   };
 

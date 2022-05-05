@@ -13,7 +13,6 @@ import RegisterForm from "./components/user/RegisterForm";
 import InfoMovie from "./components/info-movie/InfoMovie";
 import WatchingMovie from "./components/watching-movie/WatchingMovie";
 import NotFound from "./components/NotFound";
-import Logout from "./components/Logout";
 import { getMovies, getSlide } from "./services/fakeMovieService";
 import { getComments } from "./services/fakeCommentService";
 import { getCurrentUser } from "./services/fakeUserService";
@@ -50,7 +49,6 @@ class App extends Component {
                 element={<WatchingMovie />}
               />
               <Route path="/login" element={<Login />} />
-              <Route path="/logout" element={<Logout />} />
               <Route path="/register" element={<RegisterForm />} />
               <Route path="/home" element={<Home />} />
               <Route path="/follow" element={<Follow />} />

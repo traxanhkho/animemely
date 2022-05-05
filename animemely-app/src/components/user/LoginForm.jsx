@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext";
+import AuthContext, { useAuth } from "../../context/AuthContext";
 import Joi from "joi-browser";
 import Heading from "../common/Heading";
 import Form from "../common/Form";
@@ -14,6 +14,8 @@ class LoginForm extends Form {
     errors: {},
   };
 
+  static contextType = AuthContext;
+
   schema = {
     username: Joi.string().required().email().label("Username"),
     password: Joi.string().required().label("Password"),
@@ -21,13 +23,11 @@ class LoginForm extends Form {
 
   doSubmit = async () => {
     const { username, password } = this.state.data;
-    console.log(username, password);
+    const { login } = this.context;
     try {
-      const { login } = useAuth();
       await login(username, password);
-      // this.props.history("/");
-      // window.location.reload();
-      toast.success("Bạn đã đăng nhập thành công.");
+      this.props.history("/");
+      window.location.reload();
     } catch (error) {
       this.setState({
         errors: { username: "Email hoặc Mật khẩu không hợp lệ." },
