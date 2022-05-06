@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import form from "../common/Form";
 import Joi from "joi-browser";
 import Heading from "../common/Heading";
-import AuthContext, { useAuth } from "../../context/AuthContext";
-import { toast } from "react-toastify";
+import AnimeContext  from "../../context/AnimeContext";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../style/userForm.css";
 
@@ -14,7 +13,7 @@ class RegisterForm extends form {
     errors: {},
   };
 
-  static contextType = AuthContext;
+  static contextType = AnimeContext;
 
   schema = {
     username: Joi.string().required().email().label("Username"),
@@ -43,7 +42,7 @@ class RegisterForm extends form {
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("nickname", "Biệt danh", "Biệt danh bạn muốn đặt")}
           {this.renderInput("username", "Email", "Nhập email của bạn", "email")}
-          {this.renderInput("password", "Mật khẩu", "password")}
+          {this.renderInput("password", "Mật khẩu", "password", "password")}
           {this.renderButton("Đăng ký", "Đăng nhập", "/login")}
         </form>
       </div>

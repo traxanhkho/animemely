@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 import SearchBox from "./common/SearchBox";
 import SearchBoxLink from "./common/SearchBoxLink";
-import MovieContext from "../context/movieContext";
-import AuthContext from "../context/AuthContext";
+import AuthContext from "../context/AnimeContext";
 import "../style/header.css";
-import { toast } from "react-toastify";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState("");

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Route, Navigate, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { AnimeProvider } from "./context/AnimeContext";
 import MovieContext from "./context/movieContext";
 import Header from "./components/Header";
-import { AuthProvider } from "./context/AuthContext";
 import Home from "./components/home/Home";
 import History from "./components/history/History";
 import Follow from "./components/follow/Follow";
@@ -37,7 +37,7 @@ class App extends Component {
 
   render() {
     return (
-      <AuthProvider>
+      <AnimeProvider>
         <MovieContext.Provider value={this.state}>
           <div className="container">
             <ToastContainer />
@@ -59,7 +59,7 @@ class App extends Component {
             <Footer />
           </div>
         </MovieContext.Provider>
-      </AuthProvider>
+      </AnimeProvider>
     );
   }
 }
