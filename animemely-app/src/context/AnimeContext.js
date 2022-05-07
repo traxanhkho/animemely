@@ -55,20 +55,9 @@ export function AnimeProvider({ children }) {
     return get(child(dbref, "Movies/" + name))
   }
 
-  getMovies = async () =>{
-    const dbref = ref(db,"Movies");
-    try {
-      
-    } catch (error) {
-      console.log("error get movies")
-    }
-    await onValue(dbref,(snapshot) =>{
-      const movies = [] ;
-
-      snapshot.forEach(childSnapshot => {
-        movies.push(childSnapshot.val()) ; 
-      })
-    })
+  getMovies =  () =>{
+    const dbref = ref(db);
+    return get(child(dbref, "Movies"));
   }
 
   const value = {
