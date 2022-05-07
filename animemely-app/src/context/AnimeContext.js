@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { auth} from "../firebase";
+import { auth } from "../firebase";
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import {
   getDatabase,
@@ -14,7 +14,7 @@ import {
 
 const AnimeContext = React.createContext();
 
-const db = getDatabase() ; 
+const db = getDatabase();
 
 export function useAuth() {
   return useContext(AnimeContext);
@@ -24,16 +24,16 @@ export default AnimeContext;
 
 export function AnimeProvider({ children }) {
   // authentication 
-  const [currentUser, setCurrentUser] = useState();
+  const [currentUser, setCurrentUser] = useState() ;
 
   function signup(email, password) {
     const auth = getAuth()
-    return createUserWithEmailAndPassword(auth, email,password)
+    return createUserWithEmailAndPassword(auth, email, password)
   }
 
   function login(email, password) {
     const auth = getAuth()
-    return signInWithEmailAndPassword(auth,email, password);
+    return signInWithEmailAndPassword(auth, email, password);
   }
 
   function logout() {
@@ -51,13 +51,29 @@ export function AnimeProvider({ children }) {
   // realtime database .
 
   function selectMovie(name) {
-    const dbref = ref(db) ; 
+    const dbref = ref(db);
     return get(child(dbref, "Movies/" + name))
   }
 
-  getMovies =  () =>{
+  const getMovies = async () => {
     const dbref = ref(db);
-    return get(child(dbref, "Movies"));
+
+    const movies = [];
+    try {
+      const snapshot = await get(child(dbref, "Movies"));
+      if (snapshot.exists) {
+
+        snapshot.forEach(childSnapshot => {
+          movies.push(childSnapshot.val());
+        })
+      } else {
+        alert("No data found");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+    return movies;
   }
 
   const value = {
@@ -65,7 +81,8 @@ export function AnimeProvider({ children }) {
     login,
     signup,
     logout,
-    selectMovie
+    selectMovie,
+    getMovies,
   };
 
   return (

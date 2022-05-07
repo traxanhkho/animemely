@@ -1,12 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import AnimeContext from "../../context/AnimeContext"
 import MovieList from '../common/MovieList';
-import MovieContext from "../../context/movieContext";
 import Slide from './Slide';
 
 
 function Home() {
+    const { getMovies } = useContext(AnimeContext) ; 
+    const [movies, setMovies] = useState([]);
 
-  const { movies } = useContext(MovieContext) ; 
+    useEffect(() => {
+        const getData = async () => {
+            const movies = await getMovies();
+            setMovies(movies)  ; 
+        }
+        getData() ; 
+    }, [])
 
     return (
         <div className='home-section'>

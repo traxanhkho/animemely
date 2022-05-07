@@ -4,15 +4,12 @@ import "../../style/cardMovie.css";
 
 function CardMovie({ movie }) {
   return (
-    <Link to={`/info-movie/${movie._id}`} style={{textDecoration:"none"}}>
+    <Link to={`/info-movie/${movie.title}`} style={{textDecoration:"none"}}>
       <div className="card-movie">
-        <img src={movie.posters} alt="" />
-        <h4>{movie.movie_name}</h4>
-        <div className="episode-latest">
-          <span>{movie.list_episode.length}/{movie.list_episode.length}</span>
-        </div>
+        <img src={movie.poster} alt="" />
+        <h4>{movie.title}</h4>
         <div className="score">
-          <span>{movie.starRatingMovie}</span>
+          <span>{movie.starRating}</span>
         </div>
       </div >
     </Link>
