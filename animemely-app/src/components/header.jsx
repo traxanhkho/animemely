@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import SearchBox from "./common/SearchBox";
@@ -8,7 +8,8 @@ import "../style/header.css";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState("");
-  const { currentUser, logout } = useContext(AuthContext);
+  const { currentUser, logout, getData } = useContext(AuthContext);
+  const [nickname, setNickname] = useState("?nickname?");
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -23,6 +24,22 @@ function Header() {
       toast.error("Đã xảy ra lỗi bên phía back-end");
     }
   };
+
+  useEffect(() => {
+    const getNickname = async () => {
+      try {
+        const data = await getData("/Users");
+        if (currentUser) {
+          const user = data.find(item => item.email === currentUser.email);
+          setNickname(user.nickname);
+        }
+      } catch (error) {
+        alert(error)
+      }
+    }
+
+    getNickname();
+  }, [currentUser])
 
   return (
     <div className="header-section">
@@ -41,7 +58,7 @@ function Header() {
         )}
         {currentUser && (
           <React.Fragment>
-            <span>{currentUser.email}</span>
+            <span>{nickname}</span>
             <a
               onClick={handleLogout}
               class="fa fa-sign-out"

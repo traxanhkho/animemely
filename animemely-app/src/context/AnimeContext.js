@@ -74,12 +74,12 @@ export function AnimeProvider({ children }) {
     return data;
   };
 
-  function selectMovie(name) {
+  function selectData(path,name) {
     const dbref = ref(db);
-    return get(child(dbref, "Movies/" + name));
+    return get(child(dbref, path + name));
   }
 
-  const insertUsers = async (name,data) => {
+  const insertUser = async (name,data) => {
     await set(ref(db,"Users/" + name),data) ; 
   }
 
@@ -88,9 +88,9 @@ export function AnimeProvider({ children }) {
     login,
     signup,
     logout,
-    selectMovie,
+    selectData,
     getData,
-    insertUsers,
+    insertUser,
   };
 
   return (

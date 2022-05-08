@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import form from "../common/Form";
 import Joi from "joi-browser";
 import Heading from "../common/Heading";
-import AnimeContext  from "../../context/AnimeContext";
+import AnimeContext from "../../context/AnimeContext";
 import "bootstrap/dist/css/bootstrap.css";
 import "../../style/userForm.css";
 
@@ -18,20 +18,23 @@ class RegisterForm extends form {
   schema = {
     username: Joi.string().required().email().label("Username"),
     password: Joi.string().required().label("Password"),
-    nickname: Joi.string().required().label("Nickname"),
+    nickname: Joi.string().min(3).max(12).required().label("Nickname"),
   };
 
   doSubmit = async () => {
-    const { username, password } = this.state.data;
-    const { signup } = this.context;
+    const { nickname, username, password } = this.state.data;
+    const { signup, insertUser } = this.context;
+    const data = {
+      nickname: nickname,
+      email: username,
+    }
     try {
       await signup(username, password);
+      await insertUser(nickname, data);
       this.props.history("/");
       window.location.reload();
     } catch (error) {
-        this.setState({
-          errors: { nickname: "Lỗi tạo tài khoản vui lòng kiểm tra lại." },
-        });
+      alert(error)
     }
   };
 
