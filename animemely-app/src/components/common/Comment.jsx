@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AnimeContext from "../../context/AnimeContext";
@@ -7,14 +8,31 @@ import "../../style/comment.css";
 function Comment({ movieId }) {
   const { getData, currentUser } = useContext(AnimeContext);
   const [comment, setComment] = useState([]);
+  const [nickname, setNickname] = useState("");
 
-  useEffect(() =>{
-    const getDataFromApi = async () =>{
-      // const data = await getData("")
-    } ; 
+  useEffect(() => {
+    const getDataFromApi = async () => {
+      try {
+        const data = await getData("/Comments");
+        const arr = [] ; 
+        for(let val of data){
+          if(val.movieId === movieId) arr.push(val) ; 
+        }
+        setComment(arr) ; 
+      } catch (error) {
+        alert(error);
+      }
+    };
 
-    getDataFromApi() ; 
-  },[])
+    const getNickname = async () => {
+      const data = await getData("/Users");
+      const user = data.find((u) => u.email === currentUser.email);
+      setNickname(user.nickname);
+    };
+
+    getDataFromApi();
+    getNickname();
+  }, [comment]);
 
   return (
     <div className="comment">
@@ -24,7 +42,7 @@ function Comment({ movieId }) {
           Đăng nhập để bình luận
         </Link>
       )}
-      {currentUser && <CommentBox />}
+      {currentUser && <CommentBox nickname={nickname} movieId={movieId} />}
       <div className="comment-container">
         {comment.map((item) => (
           <div key={item.id} className="comment-item">
@@ -35,7 +53,7 @@ function Comment({ movieId }) {
               />
             </div>
             <div className="comment-content">
-              <h5>{item.name}</h5>
+              <h5>{item.nickname}</h5>
               <p>{item.body}</p>
             </div>
           </div>

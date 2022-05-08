@@ -7,13 +7,10 @@ import {
 } from "firebase/auth";
 import {
   getDatabase,
-  onValue,
   ref,
   set,
   get,
   child,
-  update,
-  remove,
 } from "firebase/database";
 
 const AnimeContext = React.createContext();
@@ -79,6 +76,10 @@ export function AnimeProvider({ children }) {
     return get(child(dbref, path + name));
   }
 
+  const insertData = async (path, name , data ) =>{
+    await set(ref(db,path + name ),data) ; 
+  }
+
   const insertUser = async (name,data) => {
     await set(ref(db,"Users/" + name),data) ; 
   }
@@ -91,6 +92,7 @@ export function AnimeProvider({ children }) {
     selectData,
     getData,
     insertUser,
+    insertData,
   };
 
   return (
