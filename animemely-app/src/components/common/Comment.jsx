@@ -1,13 +1,20 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import MovieContext from "../../context/movieContext";
-import { getComment } from "../../services/fakeCommentService";
+import AnimeContext from "../../context/AnimeContext";
 import CommentBox from "./CommentBox";
 import "../../style/comment.css";
 
-function Comment({ id }) {
-  const { currentUser } = useContext(MovieContext);
-  const [comment, setComment] = useState(getComment(id));
+function Comment({ movieId }) {
+  const { getData, currentUser } = useContext(AnimeContext);
+  const [comment, setComment] = useState([]);
+
+  useEffect(() =>{
+    const getDataFromApi = async () =>{
+      // const data = await getData("")
+    } ; 
+
+    getDataFromApi() ; 
+  },[])
 
   return (
     <div className="comment">
@@ -23,8 +30,8 @@ function Comment({ id }) {
           <div key={item.id} className="comment-item">
             <div className="image-avt">
               <img
-                src="https://animehay.club/upload/avatar/13264.jpg?t=1633863975"
-                alt=""
+                src="https://firebasestorage.googleapis.com/v0/b/anime-hay-8c35a.appspot.com/o/avatar-user.png?alt=media&token=a0adfa82-f118-4dfd-9ee7-92d5fee24ec7"
+                alt="avatar-image"
               />
             </div>
             <div className="comment-content">

@@ -1,35 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useContext} from "react";
 import { useParams } from "react-router-dom";
+import AnimeContext from "../../context/AnimeContext";
 import ListEpisode from "../common/ListEpisode";
 import Comment from "../common/Comment";
 import "../../style/watchingMovie.css";
-import { getEpisode, getMovie } from "../../services/fakeMovieService";
+import Loading from "../Loading";
 
 function WatchingMovie() {
-  const { movieId, episodeId } = useParams();
+  const { getData, currentUser } = useContext(AnimeContext);
+  const { movieId , episodeId } = useParams();
   const [movie, setMovie] = useState({});
   const [list, setList] = useState([]);
-  const [episode, setEpisode] = useState({});
+  const [episode, setEpisode] = useState("");
 
   useEffect(() => {
-    const movie = getMovie(movieId);
-    const episode = getEpisode(movie, episodeId);
-    setEpisode(episode);
-    setMovie(movie);
-    setList(movie.list_episode);
+    const id = movieId ;
+    const getDataFromApi = async () => {
+      try {
+        const data = await getData("Movies/");
+        const movie = data.find(m => m._id === id);
+        setMovie(movie);
+        setList(movie.episodes);
+        const episode = movie.episodes ;
+        setEpisode(episode[episodeId]) ; 
+      } catch (error) {
+        alert(error);
+      }
+    }
+
+    getDataFromApi();
   }, [episodeId]);
 
   return (
+    // <Loading />
     <div className="watching-movie">
       <div className="watching-status">
-        <h2>{movie.movie_name}</h2>
-        <h4>Đang xem tập {episode.index}</h4>
+        <h2>{movie.title}</h2>
+        <h4>Đang xem tập {parseInt(episodeId) + 1}</h4>
       </div>
       <div className="watching-video">
-        <video src={episode.path} controls />
+        <video src={episode} controls />
       </div>
       <ListEpisode list={list} movie={movie} />
-      <Comment id={movieId}/>
+      <Comment movieId={movieId}/>
     </div>
   );
 }
