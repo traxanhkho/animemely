@@ -1,6 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../firebase";
-import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import {
   getDatabase,
   onValue,
@@ -23,16 +27,16 @@ export function useAuth() {
 export default AnimeContext;
 
 export function AnimeProvider({ children }) {
-  // authentication 
+  // authentication
   const [currentUser, setCurrentUser] = useState();
 
   function signup(email, password) {
-    const auth = getAuth()
-    return createUserWithEmailAndPassword(auth, email, password)
+    const auth = getAuth();
+    return createUserWithEmailAndPassword(auth, email, password);
   }
 
   function login(email, password) {
-    const auth = getAuth()
+    const auth = getAuth();
     return signInWithEmailAndPassword(auth, email, password);
   }
 
@@ -50,11 +54,6 @@ export function AnimeProvider({ children }) {
 
   // realtime database .
 
-  function selectMovie(name) {
-    const dbref = ref(db);
-    return get(child(dbref, "Movies/" + name))
-  }
-
   const getData = async (dataName) => {
     const dbref = ref(db);
 
@@ -62,10 +61,9 @@ export function AnimeProvider({ children }) {
     try {
       const snapshot = await get(child(dbref, dataName));
       if (snapshot.exists) {
-
-        snapshot.forEach(childSnapshot => {
+        snapshot.forEach((childSnapshot) => {
           data.push(childSnapshot.val());
-        })
+        });
       } else {
         alert("No data found");
       }
@@ -74,6 +72,15 @@ export function AnimeProvider({ children }) {
     }
 
     return data;
+  };
+
+  function selectMovie(name) {
+    const dbref = ref(db);
+    return get(child(dbref, "Movies/" + name));
+  }
+
+  const insertUsers = async (name,data) => {
+    await set(ref(db,"Users/" + name),data) ; 
   }
 
   const value = {
@@ -83,11 +90,10 @@ export function AnimeProvider({ children }) {
     logout,
     selectMovie,
     getData,
+    insertUsers,
   };
 
   return (
-    <AnimeContext.Provider value={value}>
-      {children}
-    </AnimeContext.Provider>
+    <AnimeContext.Provider value={value}>{children}</AnimeContext.Provider>
   );
 }
