@@ -24,7 +24,7 @@ export default AnimeContext;
 
 export function AnimeProvider({ children }) {
   // authentication 
-  const [currentUser, setCurrentUser] = useState() ;
+  const [currentUser, setCurrentUser] = useState();
 
   function signup(email, password) {
     const auth = getAuth()
@@ -55,16 +55,16 @@ export function AnimeProvider({ children }) {
     return get(child(dbref, "Movies/" + name))
   }
 
-  const getMovies = async () => {
+  const getData = async (dataName) => {
     const dbref = ref(db);
 
-    const movies = [];
+    const data = [];
     try {
-      const snapshot = await get(child(dbref, "Movies"));
+      const snapshot = await get(child(dbref, dataName));
       if (snapshot.exists) {
 
         snapshot.forEach(childSnapshot => {
-          movies.push(childSnapshot.val());
+          data.push(childSnapshot.val());
         })
       } else {
         alert("No data found");
@@ -73,7 +73,7 @@ export function AnimeProvider({ children }) {
       console.log(error);
     }
 
-    return movies;
+    return data;
   }
 
   const value = {
@@ -82,7 +82,7 @@ export function AnimeProvider({ children }) {
     signup,
     logout,
     selectMovie,
-    getMovies,
+    getData,
   };
 
   return (

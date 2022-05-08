@@ -1,16 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Pagination, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Heading from "../common/Heading";
 import CardMovie from "../common/CardMovie";
+import Loading from "../Loading";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import "../../style/slide.css";
-import MovieContext from "../../context/movieContext";
 
-const Slide = () => {
-  const { slide } = useContext(MovieContext);
+const Slide = ({ slides }) => {
+
+  if(slides.length === 0){
+    return <Loading />
+  }
 
   return (
     <React.Fragment>
@@ -22,7 +25,7 @@ const Slide = () => {
         autoplay={{ delay: 1600, disableOnInteraction: true }}
         pagination={{ clickable: true }}
       >
-        {slide.map((item) => (
+        {slides.map((item) => (
           <SwiperSlide key={item._id}>
             <CardMovie movie={item} />
           </SwiperSlide>

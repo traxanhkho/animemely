@@ -7,6 +7,9 @@ function CardMovie({ movie }) {
     <Link to={`/info-movie/${movie.title}`} style={{textDecoration:"none"}}>
       <div className="card-movie">
         <img src={movie.poster} alt="" />
+        <div className="episode-latest">
+          <span>{movie.numberInStock} Tập</span>
+        </div>
         <h4>{movie.title}</h4>
         <div className="score">
           <span>{movie.starRating}</span>

@@ -1,27 +1,41 @@
-import React, { useContext, useEffect, useState } from 'react';
-import AnimeContext from "../../context/AnimeContext"
-import MovieList from '../common/MovieList';
-import Slide from './Slide';
-
+import React, { useContext, useEffect, useState } from "react";
+import AnimeContext from "../../context/AnimeContext";
+import MovieList from "../common/MovieList";
+import Slide from "./Slide";
 
 function Home() {
-    const { getMovies } = useContext(AnimeContext) ; 
-    const [movies, setMovies] = useState([]);
+  const { getData } = useContext(AnimeContext);
+  const [movies, setMovies] = useState([]);
+  const [slide, setSlide] = useState([]);
 
-    useEffect(() => {
-        const getData = async () => {
-            const movies = await getMovies();
-            setMovies(movies)  ; 
-        }
-        getData() ; 
-    }, [])
+  const handleGetData = async () => {
+    try {
+      const movies = await getData("Movies");
+      const slides = await getData("Slides");
+      // get slides block below .
+      const data = [];
+      slides.forEach((slide) => {
+        let value = movies.find((mov) => mov._id === slide._id);
+        if (value) data.push(value);
+      });
+      // set state of slide and movies.
+      setSlide(data);
+      setMovies(movies);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    return (
-        <div className='home-section'>
-            <Slide />
-            <MovieList heading="mới cập nhật" movies={movies} />
-        </div>
-    );
+  useEffect(() => {
+    handleGetData();
+  }, []);
+
+  return (
+    <div className="home-section">
+      <Slide slides={slide} />
+      <MovieList heading="mới cập nhật" movies={movies} />
+    </div>
+  );
 }
 
 export default Home;
