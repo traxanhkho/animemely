@@ -4,7 +4,7 @@ import "../../style/cardMovie.css";
 
 function CardMovie({ movie }) {
   return (
-    <Link to={`/info-movie/${movie.title}`} style={{textDecoration:"none"}}>
+    <Link to={`/info-movie/${movie._id}`} style={{textDecoration:"none"}}>
       <div className="card-movie">
         <img src={movie.poster} alt="" />
         <div className="episode-latest">

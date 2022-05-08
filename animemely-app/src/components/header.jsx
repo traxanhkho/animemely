@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import SearchBox from "./common/SearchBox";
 import SearchBoxLink from "./common/SearchBoxLink";
-import AuthContext from "../context/AnimeContext";
+import AnimeContext from "../context/AnimeContext";
 import "../style/header.css";
 
 function Header() {
   const [searchQuery, setSearchQuery] = useState("");
-  const { currentUser, logout, getData } = useContext(AuthContext);
+  const { currentUser, logout, getData } = useContext(AnimeContext);
   const [nickname, setNickname] = useState("?nickname?");
 
   const handleSearch = (query) => {
