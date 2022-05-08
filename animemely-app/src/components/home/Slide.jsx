@@ -27,7 +27,7 @@ const Slide = ({ slides }) => {
       >
         {slides.map((item) => (
           <SwiperSlide key={item._id}>
-            <CardMovie movie={item} />
+            <CardMovie  movie={item} />
           </SwiperSlide>
         ))}
       </Swiper>

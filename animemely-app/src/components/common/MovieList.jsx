@@ -30,7 +30,7 @@ function MovieList({ heading, movies }) {
       <Heading name={heading} />
       <div className="container">
         {allMovies.map((movie) => (
-          <CardMovie key={movie.id} movie={movie} />
+          <CardMovie key={movie._id} movie={movie} />
         ))}
       </div>
       <Pagination
