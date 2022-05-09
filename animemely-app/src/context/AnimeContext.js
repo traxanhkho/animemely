@@ -51,6 +51,8 @@ export function AnimeProvider({ children }) {
 
   // realtime database .
 
+
+
   const getData = async (dataName) => {
     const dbref = ref(db);
 
@@ -71,17 +73,27 @@ export function AnimeProvider({ children }) {
     return data;
   };
 
-  function selectData(path,name) {
+  const getUser = async (email) => {
+    try {
+      const data = await getData("/Users");
+      const user = data.find(u => u.email === email);
+      return user;
+    } catch (error) {
+      alert(error);
+    }
+  }
+
+  function selectData(path, name) {
     const dbref = ref(db);
     return get(child(dbref, path + name));
   }
 
-  const insertData = async (path, name , data ) =>{
-    await set(ref(db,path + name ),data) ; 
+  const insertData = async (path, name, data) => {
+    await set(ref(db, path + name), data);
   }
 
-  const insertUser = async (name,data) => {
-    await set(ref(db,"Users/" + name),data) ; 
+  const insertUser = async (name, data) => {
+    await set(ref(db, "Users/" + name), data);
   }
 
   const value = {
@@ -91,6 +103,7 @@ export function AnimeProvider({ children }) {
     logout,
     selectData,
     getData,
+    getUser,
     insertUser,
     insertData,
   };

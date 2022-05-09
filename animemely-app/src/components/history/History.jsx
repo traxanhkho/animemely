@@ -1,18 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import { getHistory } from "../../services/fakeUserService";
 import Heading from "../common/Heading";
-import MovieContext from "../../context/movieContext";
+import AnimeContext from "../../context/AnimeContext";
 import CardHistory from "../common/CardHistory";
 import "../../style/history.css";
 
 function History() {
-  const { currentUser } = useContext(MovieContext);
+  const { currentUser , getData } = useContext(AnimeContext);
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    if (currentUser) {
-      const history = getHistory(currentUser);
-      setHistory(history);
+    getHistory = async () =>{
+      const data = await getData("/Historys") ; 
+      if (currentUser) {
+        const history = data.find(item => item.email === currentUser.email);
+        setHistory(history) ; 
+      }
     }
   }, []);
 
@@ -38,7 +41,7 @@ function History() {
       <Heading name="lịch sử đã xem" />
       <div className="history-list">
         {history.map((item) => (
-          <CardHistory key={item._id} movie={item} />
+          <CardHistory key={item.id} movie={item} />
         ))}
       </div>
     </div>
