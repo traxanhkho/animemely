@@ -6,7 +6,8 @@ import Comment from "../common/Comment";
 import "../../style/watchingMovie.css";
 
 function WatchingMovie() {
-  const { getData, currentUser, insertData , getUser } = useContext(AnimeContext);
+  const { getData, currentUser, insertData, getUser } =
+    useContext(AnimeContext);
   const { movieId, episodeId } = useParams();
   const [movie, setMovie] = useState({});
   const [list, setList] = useState([]);
@@ -17,45 +18,71 @@ function WatchingMovie() {
     const getDataFromApi = async () => {
       try {
         const data = await getData("Movies/");
-        const movie = data.find(m => m._id === id);
+        const movie = data.find((m) => m._id === id);
         setMovie(movie);
         setList(movie.episodes);
         const episode = movie.episodes;
         setEpisode(episode[episodeId]);
         // insert history in server .
         if (currentUser) {
-          let historyId = "" ; 
+          let historyId = "";
+          let newList = null;
           try {
             const user = await getUser(currentUser.email);
             const data = await getData("/Historys");
-            const history = data.find(i => i.email === user.email) ; 
-            const listMovieId = history.movieId ; 
-            historyId = history.history_id ; 
-            let check = false ; 
-            console.log(movieId) 
-            listMovieId.forEach(id => {
-              if(id === movieId) check = true ; 
-              /// chua lam xong nha ^^
-            })
+            const history = data.find((i) => i.email === user.email);
+            // add history if not defiend . 
+            if (history === undefined) {
+              if (historyId.length === 0) historyId = Date.now().toString();
+              const list = [id] ; 
+              const data = {
+                history_id: historyId,
+                email: currentUser.email,
+                movieId: list,
+              };
+              try {
+                await insertData("Historys/", historyId, data);
+                historyId = "";
+              } catch (error) {
+                console.log(error);
+              }
+            } else {
+              const listMovieId = history.movieId;
+              historyId = history.history_id;
+              if (listMovieId.length === 0) {
+                listMovieId.push(movieId);
+                newList = listMovieId;
+              } else {
+                let check = false;
+                listMovieId.forEach((id) => {
+                  if (id === movieId) check = true;
+                });
+                if (!check) listMovieId.push(movieId);
+                newList = listMovieId;
+              }
+            }
           } catch (error) {
-            alert(error)
+            console.log(error);
           }
-          if(historyId.length === 0) historyId = Date.now().toString() ;
-          const data = {
-            history_id : historyId , 
-            email: currentUser.email,
-            movieId : ["mov1","mov2"],
-          };
-          try {
-            await insertData("Historys/", historyId, data);
-          } catch (error) {
-            alert(error);
+          if (historyId.length === 0) historyId = Date.now().toString();
+          // handle add history
+          if (newList) {
+            const data = {
+              history_id: historyId,
+              email: currentUser.email,
+              movieId: newList,
+            };
+            try {
+              await insertData("Historys/", historyId, data);
+            } catch (error) {
+              alert(error);
+            }
           }
         }
       } catch (error) {
         alert(error);
       }
-    }
+    };
 
     getDataFromApi();
   }, [episodeId]);

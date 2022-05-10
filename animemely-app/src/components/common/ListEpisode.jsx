@@ -13,7 +13,7 @@ function ListEpisode({ list, movie }) {
       <h4>Danh sách tập</h4>
       <div className="container-box">
         {list.map((item, index) => (
-          <Link key={item.id} to={`/watching-movie/${movie._id}/${index}`}>
+          <Link key={index} to={`/watching-movie/${movie._id}/${index}`}>
             {index + 1}
           </Link>
         ))}

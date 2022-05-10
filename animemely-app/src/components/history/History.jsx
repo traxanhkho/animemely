@@ -1,22 +1,33 @@
 import React, { useContext, useEffect, useState } from "react";
-import { getHistory } from "../../services/fakeUserService";
 import Heading from "../common/Heading";
 import AnimeContext from "../../context/AnimeContext";
 import CardHistory from "../common/CardHistory";
 import "../../style/history.css";
 
 function History() {
-  const { currentUser , getData } = useContext(AnimeContext);
+  const { currentUser, getData } = useContext(AnimeContext);
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    getHistory = async () =>{
-      const data = await getData("/Historys") ; 
-      if (currentUser) {
-        const history = data.find(item => item.email === currentUser.email);
-        setHistory(history) ; 
+    const getHistory = async () => {
+      try {
+        if (currentUser) {
+          const data = await getData("/Historys");
+          const movies = await getData("/Movies");
+          const history = data.find((item) => item.email === currentUser.email);
+          const listHistory = [];
+          for (let id of history.movieId) {
+            for (let val of movies) {
+              if (val._id === id) listHistory.push(val);
+            }
+          }
+          setHistory(listHistory)
+        }
+      } catch (error) {
+        alert(error);
       }
-    }
+    };
+    getHistory();
   }, []);
 
   if (!currentUser) {
@@ -31,7 +42,7 @@ function History() {
     return (
       <div className="history-section">
         <Heading name="lịch sử đã xem" />
-        <h2>Cảm ơn bạn, Danh sách lịch sử đang trống.</h2>
+        <h2>Danh sách lịch sử đang trống.</h2>
       </div>
     );
   }
@@ -41,7 +52,7 @@ function History() {
       <Heading name="lịch sử đã xem" />
       <div className="history-list">
         {history.map((item) => (
-          <CardHistory key={item.id} movie={item} />
+          <CardHistory key={item._id} movie={item} />
         ))}
       </div>
     </div>

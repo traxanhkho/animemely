@@ -14,11 +14,11 @@ function Comment({ movieId }) {
     const getDataFromApi = async () => {
       try {
         const data = await getData("/Comments");
-        const arr = [] ; 
-        for(let val of data){
-          if(val.movieId === movieId) arr.push(val) ; 
+        const arr = [];
+        for (let val of data) {
+          if (val.movieId === movieId) arr.push(val);
         }
-        setComment(arr) ; 
+        setComment(arr);
       } catch (error) {
         alert(error);
       }
@@ -31,7 +31,7 @@ function Comment({ movieId }) {
     };
 
     getDataFromApi();
-    getNickname();
+    if (currentUser) getNickname();
   }, [comment]);
 
   return (
@@ -44,8 +44,8 @@ function Comment({ movieId }) {
       )}
       {currentUser && <CommentBox nickname={nickname} movieId={movieId} />}
       <div className="comment-container">
-        {comment.map((item) => (
-          <div key={item.id} className="comment-item">
+        {comment.map((item,index) => (
+          <div key={index} className="comment-item">
             <div className="image-avt">
               <img
                 src="https://firebasestorage.googleapis.com/v0/b/anime-hay-8c35a.appspot.com/o/avatar-user.png?alt=media&token=a0adfa82-f118-4dfd-9ee7-92d5fee24ec7"
