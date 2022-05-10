@@ -43,7 +43,7 @@ class App extends Component {
             <ToastContainer />
             <Header />
             <Routes>
-              <Route path="/info-movie/:_id" element={<InfoMovie />} />
+              <Route path="/info-movie/:movieId" element={<InfoMovie />} />
               <Route
                 path="/watching-movie/:movieId/:episodeId"
                 element={<WatchingMovie />}

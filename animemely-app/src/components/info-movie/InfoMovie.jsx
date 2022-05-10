@@ -4,15 +4,77 @@ import AnimeContext from "../../context/AnimeContext";
 import Info from "../common/Info";
 import ListEpisode from "../common/ListEpisode";
 import "../../style/infoMovie.css";
+import { toast } from "react-toastify";
 
 function InfoMovie() {
   const [movie, setMovie] = useState({});
   const [list, setList] = useState([]);
-  const { getData, currentUser } = useContext(AnimeContext);
-  const params = useParams();
+  const { getData, currentUser, insertData } = useContext(AnimeContext);
+  const { movieId } = useParams();
+
+  const handleFollow = async () => {
+    try {
+      // insert history in server .
+      let FollowId = "";
+      let newList = null;
+      try {
+        const data = await getData("/Followed");
+        const Follow = data.find((i) => i.email === currentUser.email);
+        // add history if not defiend . 
+        if (Follow === undefined) {
+          if (FollowId.length === 0) FollowId = Date.now().toString();
+          const list = [movieId];
+          const data = { 
+            follow_id: FollowId,
+            email: currentUser.email,
+            movieId: list,
+          };
+          try {
+            await insertData("Followed/", FollowId, data);
+            FollowId = "";
+            toast.success("bạn đã theo dõi thành công .") ; 
+          } catch (error) {
+            console.log(error);
+          }
+        } else {
+          const listMovieId = Follow.movieId;
+          FollowId = Follow.follow_id;
+          if (listMovieId.length === 0) {
+            listMovieId.push(movieId);
+            newList = listMovieId;
+          } else {
+            let check = false;
+            listMovieId.forEach((id) => {
+              if (id === movieId) check = true;
+            });
+            if (!check) listMovieId.push(movieId);
+            newList = listMovieId;
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+      if (FollowId.length === 0) FollowId = Date.now().toString();
+      // handle add history
+      if (newList) {
+        const data = {
+          follow_id: FollowId,
+          email: currentUser.email,
+          movieId: newList,
+        };
+        try {
+          await insertData("Followed/", FollowId, data);
+          toast.success("Bạn đã theo dõi thành công.") ; 
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   useEffect(() => {
-    const movieId = params._id;
     const getDataFromApi = async () => {
       try {
         const data = await getData("Movies/");
@@ -43,7 +105,7 @@ function InfoMovie() {
       </div>
       {currentUser && (
         <div className="info-nav">
-          <button className="i-bookmark">
+          <button className="i-bookmark" onClick={handleFollow}>
             <i class="fa fa-bookmark" aria-hidden="true"></i>
           </button>
         </div>
