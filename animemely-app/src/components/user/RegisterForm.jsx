@@ -9,7 +9,7 @@ import "../../style/userForm.css";
 
 class RegisterForm extends form {
   state = {
-    data: { nickname: "", username: "", password: "" },
+    data: { nickname: "", username: "", password: "", comfirmPassword: "" },
     errors: {},
   };
 
@@ -18,6 +18,9 @@ class RegisterForm extends form {
   schema = {
     username: Joi.string().required().email().label("Username"),
     password: Joi.string().required().label("Password"),
+    comfirmPassword: Joi.string()
+      .required()
+      .valid(Joi.ref("password")),
     nickname: Joi.string().min(3).max(12).required().label("Nickname"),
   };
 
@@ -27,14 +30,15 @@ class RegisterForm extends form {
     const data = {
       nickname: nickname,
       email: username,
-    }
+    };
     try {
+      const id = Date.now().toString();
       await signup(username, password);
-      await insertUser(nickname, data);
+      await insertUser(id, data);
       this.props.history("/");
       window.location.reload();
     } catch (error) {
-      alert(error)
+      alert(error);
     }
   };
 
@@ -46,6 +50,12 @@ class RegisterForm extends form {
           {this.renderInput("nickname", "Biệt danh", "Biệt danh bạn muốn đặt")}
           {this.renderInput("username", "Email", "Nhập email của bạn", "email")}
           {this.renderInput("password", "Mật khẩu", "password", "password")}
+          {this.renderInput(
+            "comfirmPassword",
+            "Comfirm Password",
+            "comfirm Password",
+            "password"
+          )}
           {this.renderButton("Đăng ký", "Đăng nhập", "/login")}
         </form>
       </div>
