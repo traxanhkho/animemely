@@ -18,9 +18,8 @@ class RegisterForm extends form {
   schema = {
     username: Joi.string().required().email().label("Username"),
     password: Joi.string().required().label("Password"),
-    comfirmPassword: Joi.string()
-      .required()
-      .valid(Joi.ref("password")),
+    comfirmPassword: Joi.any().valid(Joi.ref('password')).required().options({ language: { any: { allowOnly: 'must match password' } } })
+    ,
     nickname: Joi.string().min(3).max(12).required().label("Nickname"),
   };
 

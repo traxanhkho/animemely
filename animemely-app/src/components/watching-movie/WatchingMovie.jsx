@@ -75,12 +75,12 @@ function WatchingMovie() {
             try {
               await insertData("Historys/", historyId, data);
             } catch (error) {
-              alert(error);
+              console.log(error);
             }
           }
         }
       } catch (error) {
-        alert(error);
+        console.log(error);
       }
     };
 

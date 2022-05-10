@@ -46,9 +46,6 @@ function InfoMovie() {
           <button className="i-bookmark">
             <i class="fa fa-bookmark" aria-hidden="true"></i>
           </button>
-          <button className="i-star">
-            <i class="fa fa-star" aria-hidden="true"></i>
-          </button>
         </div>
       )}
       <ListEpisode list={list} movie={movie} />

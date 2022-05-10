@@ -16,15 +16,18 @@ function History() {
           const movies = await getData("/Movies");
           const history = data.find((item) => item.email === currentUser.email);
           const listHistory = [];
-          for (let id of history.movieId) {
-            for (let val of movies) {
-              if (val._id === id) listHistory.push(val);
+          if (history) {
+            for (let id of history.movieId) {
+              for (let val of movies) {
+                if (val._id === id) listHistory.push(val);
+              }
             }
+            setHistory(listHistory)
           }
-          setHistory(listHistory)
+
         }
       } catch (error) {
-        alert(error);
+        console.log(error);
       }
     };
     getHistory();
