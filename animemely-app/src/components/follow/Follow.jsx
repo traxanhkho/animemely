@@ -1,18 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
 import MovieList from "../common/MovieList";
-import MovieContext from "../../context/movieContext";
-import { getFollowed } from "../../services/fakeUserService";
-import "../../style/follow.css" ; 
+import AnimeContext from "../../context/AnimeContext";
+import "../../style/follow.css";
 
 function Follow() {
-  const { currentUser } = useContext(MovieContext);
+  const { currentUser, getData } = useContext(AnimeContext);
   const [follow, setfollow] = useState([]);
 
   useEffect(() => {
-    if (currentUser) {
-      const follow = getFollowed(currentUser);
-      setfollow(follow);
+    const getDataFromApi = async () => {
+      if (currentUser) {
+        const followeds = await getData("/Followed") ; 
+        const movies = await getData("/Movies") ; 
+        for(let val of followeds.movieId){
+          for(let i of movies){
+            if(val === i.)
+          }
+        }
+        setfollow(follow);
+      }
     }
+
   }, []);
 
   if (!currentUser) {
