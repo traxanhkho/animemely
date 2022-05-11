@@ -13,27 +13,10 @@ import RegisterForm from "./components/user/RegisterForm";
 import InfoMovie from "./components/info-movie/InfoMovie";
 import WatchingMovie from "./components/watching-movie/WatchingMovie";
 import NotFound from "./components/NotFound";
-import { getMovies, getSlide } from "./services/fakeMovieService";
-import { getComments } from "./services/fakeCommentService";
-import { getCurrentUser } from "./services/fakeUserService";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 class App extends Component {
-  state = {
-    movies: [],
-    slide: [],
-    currentUser: {},
-    comments: [],
-  };
-
-  componentDidMount() {
-    this.setState({ movies: getMovies() });
-    this.setState({ slide: getSlide() });
-    this.setState({ currentUser: getCurrentUser() });
-    this.setState({ comments: getComments() });
-    window.scrollTo(0, 0, "smooth");
-  }
 
   render() {
     return (

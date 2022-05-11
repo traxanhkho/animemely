@@ -10,6 +10,7 @@ function Header() {
   const [searchQuery, setSearchQuery] = useState("");
   const { currentUser, logout, getData } = useContext(AnimeContext);
   const [nickname, setNickname] = useState("?nickname?");
+  const [show,setShow] = useState({}); 
 
   const handleSearch = (query) => {
     setSearchQuery(query);
@@ -41,16 +42,24 @@ function Header() {
     getNickname();
   }, [currentUser])
 
+  const handleShowSearch = () =>{
+    if(show.display === 'flex'){
+      setShow({display : "none"})
+    }else{
+      setShow({display : "flex"})
+    }
+  }
   return (
     <div className="header-section">
       <Link to="/" className="header-logo">
         ANIME-logo
       </Link>
-      <form className="header-form">
+      <form className="header-form" style={show}>
         <SearchBox value={searchQuery} onChange={handleSearch} />
         {searchQuery && <SearchBoxLink searchQuery={searchQuery} />}
       </form>
       <div className="header-list">
+        <a onClick={handleShowSearch} id="search-btn"  className="fa fa-search" aria-hidden="true"></a>
         <Link to="/history" className="fa fa-history" aria-hidden="true"></Link>
         <Link to="/follow" className="fa fa-bookmark" aria-hidden="true"></Link>
         {!currentUser && (

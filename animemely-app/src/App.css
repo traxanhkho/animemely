@@ -46,3 +46,27 @@ body::-webkit-scrollbar-thumb {
   padding: 1rem;
   background: var(--background-color);
 }
+
+@media (max-width: 1200px){
+  .container {
+    max-width: 100% ; 
+  }
+}
+
+@media (max-width: 768px) {
+  html{
+    font-size: 60.5%;
+  }
+
+  .card-movie img{
+    height: 18.5rem ; 
+  }
+
+  .header-section .header-form{
+    display: none ; 
+  }
+
+  .header-section .header-list #search-btn{
+    display: block ; 
+  }
+}

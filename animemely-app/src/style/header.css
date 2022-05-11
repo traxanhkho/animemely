@@ -25,6 +25,10 @@
     position: relative;
 }
 
+.header-section .header-list #search-btn{
+    display: none ; 
+}
+
 .header-section .header-form input {
     font-size: 1.6rem;
     width: 100%;
