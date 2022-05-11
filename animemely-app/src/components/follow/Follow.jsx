@@ -10,17 +10,22 @@ function Follow() {
   useEffect(() => {
     const getDataFromApi = async () => {
       if (currentUser) {
-        const followeds = await getData("/Followed") ; 
-        const movies = await getData("/Movies") ; 
-        for(let val of followeds.movieId){
-          for(let i of movies){
-            if(val === i.)
+        const data = await getData("/Followed");
+        const movies = await getData("/Movies");
+        const listMovie = [] ; 
+        const follow = data.find(h => h.email === currentUser.email) ; 
+        if (follow) {
+          for (let val of follow.movieId) {
+            for (let movie of movies) {
+              if(movie._id === val ) listMovie.push(movie) ; 
+            }
           }
         }
-        setfollow(follow);
+
+        setfollow(listMovie);
       }
     }
-
+    getDataFromApi();
   }, []);
 
   if (!currentUser) {
