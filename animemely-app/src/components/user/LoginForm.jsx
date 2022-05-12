@@ -35,6 +35,9 @@ class LoginForm extends Form {
   };
 
   render() {
+              
+    if(this.context.currentUser) return <h1 style={{textAlign: "center", padding : ".8rem", color : "red"}}>Bạn đã đăng nhập rồi.</h1>
+
     return (
       <div className="login-section">
         <Heading name="đăng nhập thành viên" />

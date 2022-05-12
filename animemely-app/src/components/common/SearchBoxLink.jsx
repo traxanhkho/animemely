@@ -1,32 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import AnimeContext from "../../context/AnimeContext";
 import { getMovies } from "../../services/fakeMovieService";
 import "../../style/searchBoxLink.css";
 
 function SearchBoxLink({ searchQuery }) {
   const [filter, setFilter] = useState([]);
+  const { getData } = useContext(AnimeContext) ; 
 
   useEffect(() => {
-    const movies = getMovies();
-    if (searchQuery) {
-      const filtered = movies.filter((m) =>
-        m.movie_name.toLowerCase().startsWith(searchQuery.toLowerCase())
-      );
-
-      setFilter(filtered);
+    const handleSearch = async () => {
+      try {
+        const data = await getData("/Movies") ; 
+        if (searchQuery) {
+          const filtered = data.filter((m) =>
+            m.title.toLowerCase().startsWith(searchQuery.toLowerCase())
+          );
+          console.log(searchQuery,filtered, data)
+          setFilter(filtered);
+        }
+      } catch (error) {
+        console.log(error) ; 
+      }
     }
+    handleSearch() ; 
   }, []);
 
   return (
     <div className="box-search">
       {filter.map((item) => (
-        <Link
+        <a
           key={item._id}
-          to={`/info-movie/${item._id}`}
+          href={`/info-movie/${item._id}`}
           className="search-link"
         >
-          {item.movie_name}
-        </Link>
+          {item.title}
+        </a>
       ))}
     </div>
   );

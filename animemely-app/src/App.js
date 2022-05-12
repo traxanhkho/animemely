@@ -21,7 +21,6 @@ class App extends Component {
   render() {
     return (
       <AnimeProvider>
-        <MovieContext.Provider value={this.state}>
           <div className="container">
             <ToastContainer />
             <Header />
@@ -41,7 +40,6 @@ class App extends Component {
             </Routes>
             <Footer />
           </div>
-        </MovieContext.Provider>
       </AnimeProvider>
     );
   }

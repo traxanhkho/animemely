@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation , useParams } from "react-router-dom";
 import AnimeContext from "../../context/AnimeContext";
 import ListEpisode from "../common/ListEpisode";
 import Comment from "../common/Comment";
@@ -12,6 +12,7 @@ function WatchingMovie() {
   const [movie, setMovie] = useState({});
   const [list, setList] = useState([]);
   const [episode, setEpisode] = useState("");
+  const location = useLocation() ; 
 
   useEffect(() => {
     const id = movieId;
@@ -97,7 +98,7 @@ function WatchingMovie() {
         <video src={episode} controls />
       </div>
       <ListEpisode list={list} movie={movie} />
-      <Comment movieId={movieId} />
+      <Comment location={location} movieId={movieId} />
     </div>
   );
 }

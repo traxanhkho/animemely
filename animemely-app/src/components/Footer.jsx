@@ -7,9 +7,9 @@ function Footer() {
     <div className="footer">
       <Link to="/" href="#">Anime-Logo</Link>
       <div className="list-social">
-        <i class="fa fa-facebook" aria-hidden="true"></i>
-        <i class="fa fa-twitter" aria-hidden="true"></i>
-        <i class="fa fa-skype" aria-hidden="true"></i>
+        <a href="https://www.facebook.com/" class="fa fa-facebook" aria-hidden="true"></a>
+        <a href="https://twitter.com/?lang=vi" class="fa fa-twitter" aria-hidden="true"></a>
+        <a href="https://www.skype.com/en/" class="fa fa-skype" aria-hidden="true"></a>
       </div>
     </div>
   );

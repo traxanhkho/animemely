@@ -19,18 +19,7 @@ const Slide = ({ slides }) => {
     <React.Fragment>
       <Heading name="phim đề cử" />
       <Swiper
-        // breakpoints={{
-        //   // when window width is >= 640px
-        //   450: {
-        //     width: 640,
-        //     slidesPerView: 4,
-        //   },
-        //   // when window width is >= 768px
-        //   768: {
-        //     width: 768,
-        //     slidesPerView: 5,
-        //   },
-        // }}
+       
         modules={[Pagination, Autoplay]}
         spaceBetween={8}
         slidesPerView={5}
